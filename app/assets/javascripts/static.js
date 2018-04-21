@@ -1,4 +1,4 @@
-$(function(){
+$(document).on("turbolinks:load",function(){
 	let weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
 	if($('.right-other').length>0){
 		scrollAnimate();
