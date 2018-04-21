@@ -1,0 +1,25 @@
+<header>
+	<div class="container flex">
+		<div class="flex">
+			<div class="logo">
+				<h1><a href="index.html"><span>Read</span>Time</a></h1>
+			</div>
+			<nav>
+				<ul class="flex flex-center">
+					<li><%= link_to '首页',root_path %></li>
+					<li><%= link_to '简介',about_path %></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<form action="#" class="flex">
+					<input type="text" placeholder="请输入你感兴趣的内容...">
+					<input type="submit" value="GO">
+				</form>
+			</div>
+		</div>
+		<div class="session-box flex flex-center">
+			<a class="button buttonStyle1 message">写信</a>
+			<a href="session.html" class="button buttonStyle2">立即登陆</a>
+		</div>
+	</div>
+</header>

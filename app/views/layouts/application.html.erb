@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogLevel3</title>
+  	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title><%= yield(:title) %> | It's Time For Reading.</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'generalPurpose/font_header' %>
+	
+	<div class="content">
+		<%= yield %>
+	</div>
+
+    <%= render 'generalPurpose/font_message' %>
   </body>
 </html>
