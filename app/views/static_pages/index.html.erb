@@ -3,23 +3,27 @@
 	<div class="left-list">
 		<div class="tags flex">
 			<ul class="flex">
-				<li><a href="#">全部内容</a></li>
-				<li><a href="#">Html&Css</a></li>
+				<li><%= link_to '全部内容','#' %></li>
+				<li><%= link_to 'Html&Css','#' %></li>
 				<li><a class="more"><span class="fa fa-plus-square fa-fw"></span> more</a></li>
 			</ul>
 			<div class="sort flex">
 				<ul class="flex sort">
-					<li><a href="#"><span class="fa fa-exchange fa-fw"></span>热门排序</a></li> | 
+					<li>
+						<%= link_to '#' do %>
+							<span class="fa fa-exchange fa-fw"></span>热门排序
+						<% end %>
+					</li> | 
 					<li><a href="#">时间排序</a></li>
 				</ul>
 			</div>
 			<div class="down-tags">
 				<ul class="flex">
-					<li><a href="#">Js&Jq</a></li>
-					<li><a href="#">Ruby on Rails</a></li>
-					<li><a href="#">React native</a></li>
-					<li><a href="#">WEixin</a></li>
-					<li><a href="#">问题集</a></li>
+					<li><%= link_to 'Js&Jq','#' %></li>
+					<li><%= link_to 'Ruby on Rails','#' %></li>
+					<li><%= link_to 'React native','#' %></li>
+					<li><%= link_to 'WEixin','#' %></li>
+					<li><%= link_to '问题集','#' %></li>
 				</ul>
 			</div>
 		</div>
@@ -34,12 +38,16 @@
 							<span>date: Sunday 14 04, 2018</span>
 						</div>
 						<div class="pd">
-							<h3><a href="#">RoR学习系列第一集</a></h3>
-							<p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eligendi quos qui reprehenderit enim corporis, libero adipisci, facere maiores maxime modi minima, officia architecto repellat! Nobis beatae minus asperiores sequi!...</a></p>
+							<h3><%= link_to 'RoR学习系列第一集','#' %></h3>
+							<p><%= link_to 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eligendi quos qui reprehenderit enim corporis, libero adipisci, facere maiores maxime modi minima, officia architecto repellat! Nobis beatae minus asperiores sequi!...','#' %></p>
 						</div>
 						<div class="post-control">
 							<ul class="flex">
-								<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
+								<li class="vote">
+									<%= link_to '#',class:'active' do %>
+										<span class="fa fa-star fa-fw"></span>200
+									<% end %>
+								</li>
 								<li><a><span class="fa fa-eye fa-fw"></span>1.1k</a></li>
 								<li class="comments"><a><span class="fa fa-comment fa-fw"></span>50条评论</a></li>
 							</ul>
@@ -53,15 +61,7 @@
 								<ul>
 									<li>
 										<div class="img flex">
-											<img src="img/pic.jpeg" alt="">
-											<span>author: Jetty</span>
-											<span>date: Sunday 14 04, 2018</span>
-										</div>
-										<p>测试发言中...</p>
-									</li>
-									<li>
-										<div class="img flex">
-											<img src="img/pic.jpeg" alt="">
+											<%= image_tag('pic.jpeg') %>
 											<span>author: Jetty</span>
 											<span>date: Sunday 14 04, 2018</span>
 										</div>
@@ -92,11 +92,11 @@
 			<div class="user-data">
 				<ul class="flex">
 					<li>
-						<a href="#">150</a>
+						<%= link_to '#' do %>150<% end %>
 						<p>评论数</p>
 					</li>
 					<li>
-						<a href="#">50</a>
+						<a>50</a>
 						<p>点赞数</p>
 					</li>
 				</ul>
