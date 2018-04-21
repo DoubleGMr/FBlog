@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-	@base_title = "It's time for Reading."
+	@base_title = "It's Time For Reading."
   end
   
   test "should get index" do
@@ -15,7 +15,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get about" do
     get about_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "About | #{@base_title}"
   end
 
 end
