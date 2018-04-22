@@ -1,0 +1,7 @@
+Hi, <%= @user.name %>
+
+感谢您注册使用ReadTime.现在复制下方链接完成激活:
+
+At first Thanks for your register at ReadTime! Copy the link below to activate your account:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

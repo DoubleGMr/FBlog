@@ -1,0 +1,10 @@
+<div style="padding: 10px 20px;">
+	<h1>Hello <%= @user.name %></h1>
+	<p>感谢您注册使用<strong style="color: #0084ff;">ReadTime</strong>.现在点击下方按钮链接完成激活:</p>
+	<p>Thanks for your register At <strong style="color: #0084ff;">ReadTime</strong>. Now click on the link below to activate your account:</p>
+	<p>
+		<%= link_to edit_account_activation_url(@user.activation_token,email: @user.email) do %>
+			<button style="background-color: #0084ff;color: #fff;padding:10px;border-radius: 3px;cursor: pointer;font-size: 24px;">Activate</button>
+		<% end %>
+	</p>
+</div>
