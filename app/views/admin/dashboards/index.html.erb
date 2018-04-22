@@ -1,0 +1,435 @@
+<div class="container flex">
+	<div class="left-list">
+		<div class="tags flex">
+			<ul class="flex">
+				<li><a href="#">Posts</a></li>
+				<li><a href="#">Users</a></li>
+				<li><a class="more"><span class="fa fa-plus-square fa-fw"></span> more</a></li>
+			</ul>
+			<div class="sort flex">
+				<ul class="flex sort">
+					<!-- <li><a href="#"><span class="fa fa-exchange fa-fw"></span>热门排序</a></li> | 
+					<li><a href="#">时间排序</a></li> -->
+					<li><a href="index.html" class="button buttonStyle1">数据刷新</a></li>
+				</ul>
+			</div>
+			<div class="down-tags">
+				<ul class="flex">
+					<li><a href="#">Comments</a></li>
+					<li><a href="#">Setting</a></li>
+					<li><a href="#">问题集</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="total-data">
+			<div class="total-chart">
+				<h3>Total Data with chart</h3>
+				<div class="flex">
+					<div class="chart" id="totalChart">	
+					</div>
+				</div>
+			</div>
+			<div class="total-tags">
+				<h3 class="flex">
+					Tags had benn Created
+					<span>
+						<a href="#" class="buttonStyle2 button tag-create">
+							<span class="fa fa-plus fa-fw"></span>添加标签
+						</a>
+					</span>
+				</h3>
+				<div class="flex data-box">
+					<button class="button buttonStyle1">
+						Html&Css
+						<a href="#" class="flex flex-center">
+							<span class="fa fa-trash fa-fw"></span>
+						</a>
+					</button>
+					<button class="button buttonStyle1">
+						Js&Jq
+						<a href="#" class="flex flex-center">
+							<span class="fa fa-trash fa-fw"></span>
+						</a>
+					</button>
+					<button class="button buttonStyle1">
+						Ruby on Rails
+						<a href="#" class="flex flex-center">
+							<span class="fa fa-trash fa-fw"></span>
+						</a>
+					</button>
+					<button class="button buttonStyle1">
+						React
+						<a href="#" class="flex flex-center">
+							<span class="fa fa-trash fa-fw"></span>
+						</a>
+					</button>
+					<button class="button buttonStyle1">
+						React Native
+						<a href="#" class="flex flex-center">
+							<span class="fa fa-trash fa-fw"></span>
+						</a>
+					</button>
+				</div>
+			</div>
+			<div class="total-posts">
+				<h3 class="flex">
+					Posts'Lastest Data
+					<span>
+						<a href="#" class="buttonStyle2 button"><span class="fa fa-plus fa-fw"></span>查看更多</a>
+					</span>
+				</h3>
+				<ul>
+					<li>
+						<div class="post-data">
+							<div class="pd">
+								<h3 class="flex">
+									<a href="#">RoR学习系列第一集</a>
+									<span>
+										<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+										<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+									</span>
+								</h3>
+							</div>
+							<div class="img flex">
+								<%= image_tag('pic.jpeg') %>
+								<span>author: Jetty</span>
+								<span>date: Sunday 14 04, 2018</span>
+							</div>
+							<div class="post-control">
+								<ul class="flex">
+									<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
+									<li><a><span class="fa fa-eye fa-fw"></span>1.1k</a></li>
+									<li class="comments"><a><span class="fa fa-comment fa-fw"></span>50条评论</a></li>
+								</ul>
+							</div>
+							<div class="comment">
+								<h3 class="flex">
+									<p>50条评论</p>
+									<p class="close"><span class="fa fa-close fa-fw"></span></p>
+								</h3>
+								<div class="comment-list">
+									<ul>
+										<li>
+											<div class="img flex">
+												<%= image_tag('pic.jpeg') %>
+												<span>author: Jetty</span>
+												<span>date: Sunday 14 04, 2018</span>
+											</div>
+											<p>测试发言中...</p>
+										</li>
+										<li>
+											<div class="img flex">
+												<%= image_tag('pic.jpeg') %>
+												<span>author: Jetty</span>
+												<span>date: Sunday 14 04, 2018</span>
+											</div>
+											<p>测试发言中...</p>
+										</li>
+									</ul>
+								</div>
+								<div class="comment-send">
+									<form action="#">
+										<div class="flex">
+											<input type="text" placeholder="评论请注意说辞...">
+											<input type="submit" value="评论" class="buttonStyle2">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="post-data">
+							<div class="pd">
+								<h3 class="flex">
+									<a href="#">RoR学习系列第一集</a>
+									<span>
+										<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+										<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+									</span>
+								</h3>
+							</div>
+							<div class="img flex">
+								<%= image_tag('pic.jpeg') %>
+								<span>author: Jetty</span>
+								<span>date: Sunday 14 04, 2018</span>
+							</div>
+							<div class="post-control">
+								<ul class="flex">
+									<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
+									<li><a><span class="fa fa-eye fa-fw"></span>1.1k</a></li>
+									<li class="comments"><a><span class="fa fa-comment fa-fw"></span>50条评论</a></li>
+								</ul>
+							</div>
+							<div class="comment">
+								<h3 class="flex">
+									<p>50条评论</p>
+									<p class="close"><span class="fa fa-close fa-fw"></span></p>
+								</h3>
+								<div class="comment-list">
+									<ul>
+										<li>
+											<div class="img flex">
+												<%= image_tag('pic.jpeg') %>
+												<span>author: Jetty</span>
+												<span>date: Sunday 14 04, 2018</span>
+											</div>
+											<p>测试发言中...</p>
+										</li>
+										<li>
+											<div class="img flex">
+												<%= image_tag('pic.jpeg') %>
+												<span>author: Jetty</span>
+												<span>date: Sunday 14 04, 2018</span>
+											</div>
+											<p>测试发言中...</p>
+										</li>
+									</ul>
+								</div>
+								<div class="comment-send">
+									<form action="#">
+										<div class="flex">
+											<input type="text" placeholder="评论请注意说辞...">
+											<input type="submit" value="评论" class="buttonStyle2">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="total-users">
+				<h3 class="flex">
+					lasteet 3 Users'data
+					<span>
+						<a href="#" class="buttonStyle2 button"><span class="fa fa-plus fa-fw"></span>查看更多</a>
+					</span>
+				</h3>
+				<div class="users-list">
+					<ul>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<a href="#">Create at: Thursday 19 04,2018</a>
+										<span>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg') %>
+									<span><strong>Name:</strong> Jetty</span>
+									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<a href="#">Create at: Thursday 19 04,2018</a>
+										<span>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg') %>
+									<span><strong>Name:</strong> Jetty</span>
+									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<a href="#">Create at: Thursday 19 04,2018</a>
+										<span>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg') %>
+									<span><strong>Name:</strong> Jetty</span>
+									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="total-comments">
+				<h3 class="flex">
+					Lastest 3 Comments
+					<span>
+						<a href="#" class="buttonStyle2 button"><span class="fa fa-plus fa-fw"></span>查看更多</a>
+					</span>
+				</h3>
+				<div class="comments-list">
+					<ul>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<a href="#">Create at: Thursday 19 04,2018</a>
+										<span>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg') %>
+									<span><strong>Name:</strong> Jetty</span>
+									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+								</div>
+								<div class="cc">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<a href="#">Create at: Thursday 19 04,2018</a>
+										<span>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg') %>
+									<span><strong>Name:</strong> Jetty</span>
+									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+								</div>
+								<div class="cc">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<a href="#">Create at: Thursday 19 04,2018</a>
+										<span>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
+											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg') %>
+									<span><strong>Name:</strong> Jetty</span>
+									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+								</div>
+								<div class="cc">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right-other">
+		<div class="user flex flex-center">
+			<div class="img">
+				<%= image_tag('pic.jpeg') %>
+			</div>
+			<p><a href="#">Jetty <span class="fa fa-edit fa-fw"></span></a></p>
+			<div class="user-data">
+				<ul class="flex">
+					<li>
+						<a href="#"><span class="fa fa-calendar-minus-o fa-fw"></span><span class="weekDate"></span></a>
+						<p>国历日期: <span class="clearDate"></span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="recommend">
+			<h3>The Most Active Users</h3>
+			<ul class="flex">
+				<li><a href="#">Jetty</a></li>
+				<li><a href="#">James</a></li>
+				<li><a href="#">Double</a></li>
+				<li><a href="#">Ruby</a></li>
+				<li><a href="#">Jack</a></li>
+				<li><a href="#">Luna</a></li>
+				<li><a href="#">Jimmy</a></li>
+				<li><a href="#">Kiki</a></li>
+				<li><a href="#">Cici</a></li>
+				<li><a href="#">Angel</a></li>
+				<li><a href="#">Dili</a></li>
+				<li><a href="#">Maray</a></li>
+				<li><a href="#">Justibity</a></li>
+			</ul>
+		</div>
+		<div class="footer">
+			<p>记住自己是谁,在想什么,在做什么</p>
+			<p>不要让今天的忧愁掩盖你明天的快乐</p>
+			<p>勇敢走下去,世界在等待着微笑的你</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.min.js"></script>
+<script>
+	let totalChart = echarts.init(document.getElementById('totalChart'));
+	let option = {
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        orient: 'vertical',
+	        left: '70%',
+	        top: 'middle',
+	        data: ['游客访问量','信件接受量','用户注册量','贴文创建量','贴文标签量','用户评论量'],
+	        textStyle: {
+	        	fontSize: 16,
+	        	color: '#666',
+	        }
+	    },
+	    series : [
+	        {
+	            name: '具体数据',
+	            type: 'pie',
+	            radius : '55%',
+	            center: ['30%', '55%'],
+	            data:[
+	                {value:335, name:'游客访问量'},
+	                {value:310, name:'信件接受量'},
+	                {value:234, name:'用户注册量'},
+	                {value:135, name:'贴文创建量'},
+	                {value:1548, name:'贴文标签量'},
+	                {value:220, name:'用户评论量'},
+	            ],
+	            label: {
+		            textStyle: {
+		            	fontSize: 14,
+		            	color: '#777',
+		            }
+	            },
+	            itemStyle: {
+	            	normal: {
+	            		color:'#0084ff',
+	            		shadowBlur: 10,
+	            		shadowColor: 'rgba(0, 0, 0, 0.5)'
+	            	},
+	            }
+	        }
+	    ]
+	};
+	totalChart.setOption(option);
+</script>
