@@ -1,16 +1,19 @@
 <% provide(:title,'Sign') %>
-<form action="#">
+<%= render 'generalPurpose/error_message' %>
+<%= form_for(@user,url: sign_path) do |f| %>
 	<div>
-		<input type="text" placeholder="请输入你的账号...">
+		<%= f.text_field :name,placeholder: '请输入你的账号...' %>
 	</div>
 	<div>
-		<input type="password" placeholder="请输入你的密码...">
+		<%= f.email_field :email,placeholder: '请输入你的邮箱...' %>
 	</div>
 	<div>
-		<input type="checkbox">
-		<span>记住登陆的账号,方便下次登陆</span>	
+		<%= f.password_field :password,placeholder: '请输入你的密码...' %>
 	</div>
 	<div>
-		<input type="submit" class="buttonStyle1" value="快速登陆">
+		<%= f.password_field :password_confirmation,placeholder: '请输入你的密码...' %>
 	</div>
-</form>
+	<div>
+		<%= f.submit "快速注册",class: 'buttonStyle1' %>
+	</div>	
+<% end %>

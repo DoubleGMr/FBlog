@@ -56,6 +56,10 @@ $(document).on("turbolinks:load",function(){
 			$('.userChange-box').css('display','none');
 		}else if($('.introduce-box').css('display')=='flex'){
 			$('.introduce-box').css('display','none');
+		}else if($('.error-box').length>0){
+			$('.error-box').fadeOut(300);
+		}else if($('.alert').length>0){
+			$('.alert').fadeOut(300);
 		}
 	});
 

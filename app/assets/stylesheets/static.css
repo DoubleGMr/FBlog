@@ -116,6 +116,34 @@ img{
 	color: var(--topicColor);
 	border: 2px solid var(--topicColor);
 }
+.alert{
+	position: fixed;
+	width: 100%;
+	top: 65px;
+	left: 0;
+	z-index: 999;
+	-webkit-animation: down .5s linear;
+	        animation: down .5s linear;
+}
+.alert .container{
+	position: relative;
+	background-color: var(--basicBgColor);
+	box-shadow: 0 1px 3px var(--shadowColor);
+	padding: 20px 30px;
+}
+.alert p{
+	color: var(--topicColor);
+}
+.alert .close{
+	position: absolute;
+	right: 30px;
+}
+.close{
+	cursor: pointer;
+}
+.close:hover{
+	color: var(--topicColor);
+}
 
 header{
 	position: fixed;
@@ -307,7 +335,6 @@ header .session-box a{
 }
 .post-data .comment h3 p.close{
 	text-align: right;
-	cursor: pointer;
 }
 .post-data .comment ul li{
 	padding: 10px 0;
@@ -418,7 +445,6 @@ header .session-box a{
 	top: 5px;
 	font-size: 2rem;
 	color: #fff;
-	cursor: pointer;
 }
 .message-box>div,.tags-box>div,.userChange-box>div,.introduce-box>div{
 	width: 600px;
@@ -554,8 +580,8 @@ header .session-box a{
 }
 .rightSession>div h1{
 	text-align: center;
-	padding: 20px 0 40px;
-	font-size: 2.5rem;
+	padding: 20px 0 30px;
+	font-size: 3.5rem;
 }
 .rightSession>div h1 span{
 	color: var(--topicColor);
@@ -563,7 +589,7 @@ header .session-box a{
 .rightSession>div div{
 	padding: 10px 0;
 }
-.rightSession>div div input[type="text"],.rightSession>div div input[type="password"],.rightSession>div div input[type="submit"]{
+.rightSession>div div input[type="text"],.rightSession>div div input[type="password"],.rightSession>div div input[type="submit"],.rightSession>div div input[type="email"]{
 	width: 100%;
 	font-size: 1.1rem;
 	padding: 10px;
@@ -696,6 +722,77 @@ header .session-box a{
 	color: var(--topicColor);
 	text-transform: uppercase;
 	font-size: 1.4rem;
+}
+
+.rightSession>div div.error-box{
+	position: fixed;
+	right: 0;
+	top: 10%;
+	padding:30px;
+	border-radius: 3px;
+	border: 1px solid #eee;
+	background-color: var(--basicBgColor);
+	box-shadow: 0 1px 3px var(--shadowColor);
+	-webkit-animation: out .5s linear;
+	        animation: out .5s linear;
+}
+.rightSession>div div.error-box .close{
+	position: absolute;
+	right: 20px;
+	top: 36px;
+}
+.rightSession>div div.error-box h3{
+	color: var(--topicColor);
+	padding: 5px 0;
+}
+.rightSession>div div.field_with_errors{
+	padding: 0;
+}
+
+/* animate */
+@-webkit-keyframes out{
+	0%{
+		-webkit-transform: translateX(100%);
+		        transform: translateX(100%);
+		opacity: 0;
+	}
+	100%{
+		-webkit-transform: translateX(0);
+		        transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes out{
+	0%{
+		-webkit-transform: translateX(100%);
+		        transform: translateX(100%);
+		opacity: 0;
+	}
+	100%{
+		-webkit-transform: translateX(0);
+		        transform: translateX(0);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes down{
+	0%{
+		top: -130px;
+		opacity: 0;
+	}
+	100%{
+		top: 65px;
+		opacity: 1;
+	}
+}
+@keyframes down{
+	0%{
+		top: -130px;
+		opacity: 0;
+	}
+	100%{
+		top: 65px;
+		opacity: 1;
+	}
 }
 
 
