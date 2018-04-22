@@ -1,7 +1,7 @@
 <% if @user.errors.any? %>
 	<div class="error-box">
 		<h3>
-			注册信息包含 <%= @user.errors.count %> 错误.
+			填写信息包含 <%= @user.errors.count %> 错误.
 		</h3>
 		<ul>
 			<% @user.errors.full_messages.each do |msg| %>

@@ -1,0 +1,14 @@
+<% provide(:title,'Reset Password') %>
+<%= render 'generalPurpose/error_message' %>
+<%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+	<%= hidden_field_tag :email, @user.email %>
+	<div>
+		<%= f.password_field :password,placeholder: '请输入你的密码...' %>
+	</div>
+	<div>
+		<%= f.password_field :password_confirmation,placeholder: '请再次输入你的密码...' %>
+	</div>
+	<div>
+		<%= f.submit "邮件获取",class: 'buttonStyle1' %>
+	</div>	
+<% end %>
