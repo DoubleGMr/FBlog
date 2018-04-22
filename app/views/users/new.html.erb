@@ -2,7 +2,7 @@
 <%= render 'generalPurpose/error_message' %>
 <%= form_for(@user,url: sign_path) do |f| %>
 	<div>
-		<%= f.text_field :name,placeholder: '请输入你的账号...' %>
+		<%= f.text_field :name,placeholder: '请输入你的用户名...' %>
 	</div>
 	<div>
 		<%= f.email_field :email,placeholder: '请输入你的邮箱...' %>
@@ -15,5 +15,6 @@
 	</div>
 	<div>
 		<%= f.submit "快速注册",class: 'buttonStyle1' %>
+		<p><%= link_to 'Back To Sign In',login_path %></p>
 	</div>	
 <% end %>

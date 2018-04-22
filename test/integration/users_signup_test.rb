@@ -9,7 +9,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 	                                	password: "foo",
 										password_confirmation: "bar" } }
 		end
-		assert_template 'users/new' 
+		assert_template 'users/new'
 	end	
 	test "valid signup information" do
 		get sign_path
@@ -20,7 +20,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 												 password_confirmation: "password" } }
 		end
 	    follow_redirect!
-		assert_template 'users/show' 
-		assert_not flash.empty?
+		assert_template root_path
+		assert is_logged_in?
 	end
 end

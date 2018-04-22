@@ -19,7 +19,11 @@
 		</div>
 		<div class="session-box flex flex-center">
 			<a class="button buttonStyle1 message">写信</a>
-			<%= link_to '立即登陆',sign_path,class: 'button buttonStyle2' %>
+			<% if logged_in? %>
+				<%= link_to '退出登陆',logout_path,class: 'button buttonStyle2', method: :delete %>
+			<% else %>
+				<%= link_to '立即登陆',login_path,class: 'button buttonStyle2' %>
+			<% end %>		
 		</div>
 	</div>
 </header>

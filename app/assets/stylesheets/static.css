@@ -119,6 +119,7 @@ img{
 .alert{
 	position: fixed;
 	width: 100%;
+	padding: 0 30px;
 	top: 65px;
 	left: 0;
 	z-index: 999;
@@ -130,9 +131,8 @@ img{
 	background-color: var(--basicBgColor);
 	box-shadow: 0 1px 3px var(--shadowColor);
 	padding: 20px 30px;
-}
-.alert p{
-	color: var(--topicColor);
+	border: 1px solid #eee;
+	border-radius: 3px;
 }
 .alert .close{
 	position: absolute;
@@ -588,6 +588,13 @@ header .session-box a{
 }
 .rightSession>div div{
 	padding: 10px 0;
+}
+.rightSession>div div p{
+	padding: 10px 0;
+	text-align: center;
+}
+.rightSession>div div p a{
+	color: var(--topicColor);
 }
 .rightSession>div div input[type="text"],.rightSession>div div input[type="password"],.rightSession>div div input[type="submit"],.rightSession>div div input[type="email"]{
 	width: 100%;

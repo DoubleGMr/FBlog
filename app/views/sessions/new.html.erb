@@ -1,0 +1,13 @@
+<% provide(:title,'LogIn') %>
+<%= form_for(:session,url: login_path) do |f| %>
+	<div>
+		<%= f.email_field :email,placeholder: '请输入你的邮箱...' %>
+	</div>
+	<div>
+		<%= f.password_field :password,placeholder: '请输入你的密码...' %>
+	</div>
+	<div>
+		<%= f.submit "快速登陆",class: 'buttonStyle1' %>
+		<p><%= link_to 'Register As a New User',sign_path %></p>
+	</div>
+<% end %>
