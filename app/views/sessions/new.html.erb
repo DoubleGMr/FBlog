@@ -7,6 +7,10 @@
 		<%= f.password_field :password,placeholder: '请输入你的密码...' %>
 	</div>
 	<div>
+		<%= f.check_box :remember_me %>
+		<span>记住以便下次登陆</span>
+	</div>
+	<div>
 		<%= f.submit "快速登陆",class: 'buttonStyle1' %>
 		<p><%= link_to 'Register As a New User',sign_path %></p>
 	</div>
