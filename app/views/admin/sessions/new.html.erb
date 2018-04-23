@@ -1,5 +1,5 @@
 <% provide(:title,'LogIn') %>
-<%= form_for(:session,url: login_path) do |f| %>
+<%= form_for(:session,url: admin_login_path) do |f| %>
 	<div>
 		<%= f.email_field :email,placeholder: '请输入你的邮箱...' %>
 	</div>

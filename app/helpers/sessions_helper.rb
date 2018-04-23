@@ -42,4 +42,46 @@ module SessionsHelper
         cookies.delete(:user_id)
         cookies.delete(:remember_token)
 	end
+
+  			  #admin登陆
+
+	def admin_log_in(admin)
+		session[:admin_id] = admin.id
+	end
+
+	def admin_remember(admin)
+        admin.remember
+        cookies.permanent.signed[:admin_id] = admin.id
+        cookies.permanent[:remember_token] = admin.remember_token
+	end
+
+	def current_admin
+		if (admin_id = session[:admin_id]) 
+			@current_admin ||= Administrator.find_by(id: admin_id)
+		elsif (admin_id = cookies.signed[:admin_id])
+			admin = Administrator.find_by(id: admin_id)
+			if admin && admin.authenticated?(:remember, cookies[:remember_token])
+				admin_log_in admin
+				@current_admin = admin
+			end
+		end
+	end
+
+	def admin_logged_in?
+		!current_admin.nil? 
+	end
+
+	# 退出当前用户 
+	def admin_log_out
+        admin_forget(current_admin)
+        session.delete(:admin_id)
+        @current_admin = nil
+	end
+
+	# 忘记持久会话 
+	def admin_forget(admin)
+        admin.forget
+        cookies.delete(:admin_id)
+        cookies.delete(:remember_token)
+	end
 end

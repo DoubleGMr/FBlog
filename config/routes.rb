@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
   
-  namespace :admin do
-    get 'dashboards/index'
-  end
-
-  namespace :admin do
-    get 'administrators/new'
-  end
-
-  namespace :admin do
-    get 'administrators/show'
-  end
-
-  namespace :admin do
-    get 'administrators/edit'
-  end
-
   root 'static_pages#index'
   get '/about',to:'static_pages#about'
   get '/sign',to:'users#new'
@@ -33,6 +17,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboards ,only: :index
+    resources :administrators,only: [:index,:edit,:update,:new,:create]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
