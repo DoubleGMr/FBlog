@@ -3,6 +3,7 @@
 	--basicColor:#666;
 	--topicColor:#0084ff;
 	--smallImg:30px;
+	--middleImg: 55px;
 	--shadowColor:rgba(26,26,26,.15);
 	--minWidth:850px;
 	--maxWidth:1024px;
@@ -254,15 +255,20 @@ header .session-box a{
 	margin: 8px 0;
 }
 .left-list .post-list .post-data .img,.total-data .post-data .img{
-	height: var(--smallImg);
 	text-transform: uppercase;
 	margin: 10px 0 5px;
 	padding-left: 20px;
 }
 .left-list .post-list .post-data .img img,.total-data .post-data .img img{
 	width: var(--smallImg);
+	height: var(--smallImg);
+}
+.left-list .post-list .post-data .img img.middleImg,.total-data .post-data .img img.middleImg{
+	width: var(--middleImg);
+	height: var(--middleImg);
 }
 .left-list .post-list .post-data .img span,.total-data .post-data .img span{
+	display: block;
 	padding: 0 8px 0 5px;
 	line-height: var(--smallImg);
 }

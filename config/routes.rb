@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :dashboards ,only: :index
     resources :administrators,only: [:index,:edit,:update,:new,:create]
+    resources :users,only: [:index,:show,:update,:destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

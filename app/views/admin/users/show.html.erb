@@ -6,8 +6,15 @@
 			<%= image_tag('pic.jpeg') %>
 		</div>
 		<div class="authorData uData">
-			<h2><strong><%= @user.name %></strong><span>Created at: <%= @user.created_at %><span class="fa fa-gg fa-fw"></span></span></h2>
-			<p>Email: <%= @user.email %></p>
+			<h2><strong><%= @user.name %></strong><span>Created at: <%= @user.created_at %> 
+				<a class="userChange"><span class="fa fa-edit fa-fw"></span></a></span>
+			</h2>
+			<p class="flex">
+				Email: <%= @user.email %>
+				<span>
+					<%= link_to 'Delete',admin_user_path(@user), class: 'buttonStyle2 button' ,method: :delete, data:{confirm: "确定删除#{@user.name}吗?"} %>
+				</span>
+			</p>
 		</div>
 	</div>
 	<div class="aboutContent">
@@ -23,6 +30,9 @@
 						<div class="pd">
 							<h3 class="flex pl">
 								<a href="#"><strong>For:</strong> one post's name</a>
+								<span>
+									<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+								</span>
 							</h3>
 						</div>
 						<div class="img flex">
@@ -38,6 +48,9 @@
 						<div class="pd">
 							<h3 class="flex pl">
 								<a href="#"><strong>For:</strong> one post's name</a>
+								<span>
+									<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+								</span>
 							</h3>
 						</div>
 						<div class="img flex">
@@ -53,6 +66,9 @@
 						<div class="pd">
 							<h3 class="flex pl">
 								<a href="#"><strong>For:</strong> one post's name</a>
+								<span>
+									<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+								</span>
 							</h3>
 						</div>
 						<div class="img flex">
@@ -66,4 +82,28 @@
 			</ul>
 		</div>
 	</div>
+</div>
+
+<div class="userChange-box flex flex-center">
+	<div>
+		<h2>用户信息修改</h2>
+		<%= form_for [:admin,@user] do |f| %>
+			<div>
+				<%= f.text_field :name, placeholder: 'User Name...' %>
+			</div>
+			<div>
+				<%= f.email_field :email, placeholder: 'User Email...' %>
+			</div>
+			<div>
+				<%= f.password_field :password, placeholder: 'User Password...' %>
+			</div>
+			<div>
+				<%= f.password_field :password_confirmation, placeholder: 'User Password...' %>
+			</div>
+			<div>
+				<%= f.submit value:'用户修改提交',class: 'buttonStyle1' %>
+			</div>
+		<% end %>
+	</div>
+	<p class="close"><span class="fa fa-close fa-fw"></span></p>
 </div>

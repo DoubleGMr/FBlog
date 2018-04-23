@@ -10,7 +10,7 @@
 				<ul class="flex sort">
 					<!-- <li><a href="#"><span class="fa fa-exchange fa-fw"></span>热门排序</a></li> | 
 					<li><a href="#">时间排序</a></li> -->
-					<li><a href="index.html" class="button buttonStyle1">数据刷新</a></li>
+					<li><%= link_to '数据刷新',admin_dashboards_path,class: 'button buttonStyle1' %></li>
 				</ul>
 			</div>
 			<div class="down-tags">
@@ -208,60 +208,34 @@
 				</h3>
 				<div class="users-list">
 					<ul>
+						<% @users.each do |user| %>
 						<li>
 							<div class="post-data">
 								<div class="pd">
 									<h3 class="flex">
-										<a href="#">Create at: Thursday 19 04,2018</a>
+										<%= link_to admin_user_path(user) do %>
+											Create at: <%= user.created_at %>
+										<% end %>
 										<span>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+											<%= link_to admin_user_path(user),class: 'buttonStyle3 button' do %>
+												<span class="fa fa-eye fa-fw">
+											<% end %>
+											<%= link_to admin_user_path(user,f_a: 'dashboard'),class: 'buttonStyle3 button',method: :delete,data:{confirm: "确认删除#{user.name}吗？"} do %>
+												<span class="fa fa-trash fa-fw">
+											<% end %>
 										</span>
 									</h3>
 								</div>
 								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
-									<span><strong>Name:</strong> Jetty</span>
-									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+									<%= image_tag('pic.jpeg',class: "middleImg") %>
+									<div>
+										<span><strong>Name:</strong> <%= user.name %></span>
+										<span><strong>Email:</strong> <%= user.email %></span>
+									</div>	
 								</div>
 							</div>
 						</li>
-						<li>
-							<div class="post-data">
-								<div class="pd">
-									<h3 class="flex">
-										<a href="#">Create at: Thursday 19 04,2018</a>
-										<span>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-										</span>
-									</h3>
-								</div>
-								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
-									<span><strong>Name:</strong> Jetty</span>
-									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="post-data">
-								<div class="pd">
-									<h3 class="flex">
-										<a href="#">Create at: Thursday 19 04,2018</a>
-										<span>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-										</span>
-									</h3>
-								</div>
-								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
-									<span><strong>Name:</strong> Jetty</span>
-									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
-								</div>
-							</div>
-						</li>
+						<% end %>
 					</ul>
 				</div>
 			</div>
@@ -286,51 +260,11 @@
 									</h3>
 								</div>
 								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
-									<span><strong>Name:</strong> Jetty</span>
-									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
-								</div>
-								<div class="cc">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="post-data">
-								<div class="pd">
-									<h3 class="flex">
-										<a href="#">Create at: Thursday 19 04,2018</a>
-										<span>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-										</span>
-									</h3>
-								</div>
-								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
-									<span><strong>Name:</strong> Jetty</span>
-									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
-								</div>
-								<div class="cc">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="post-data">
-								<div class="pd">
-									<h3 class="flex">
-										<a href="#">Create at: Thursday 19 04,2018</a>
-										<span>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-edit fa-fw"></span></a>
-											<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-										</span>
-									</h3>
-								</div>
-								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
-									<span><strong>Name:</strong> Jetty</span>
-									<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+									<%= image_tag('pic.jpeg',class: "middleImg") %>
+									<div>
+										<span><strong>Name:</strong> Jetty</span>
+										<span><strong>Email:</strong> yao1508728331@gmail.com</span>
+									</div>
 								</div>
 								<div class="cc">
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
@@ -385,51 +319,53 @@
 
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.min.js"></script>
 <script>
-	let totalChart = echarts.init(document.getElementById('totalChart'));
-	let option = {
-	    tooltip : {
-	        trigger: 'item',
-	        formatter: "{a} <br/>{b} : {c} ({d}%)"
-	    },
-	    legend: {
-	        orient: 'vertical',
-	        left: '70%',
-	        top: 'middle',
-	        data: ['游客访问量','信件接受量','用户注册量','贴文创建量','贴文标签量','用户评论量'],
-	        textStyle: {
-	        	fontSize: 16,
-	        	color: '#666',
-	        }
-	    },
-	    series : [
-	        {
-	            name: '具体数据',
-	            type: 'pie',
-	            radius : '55%',
-	            center: ['30%', '55%'],
-	            data:[
-	                {value:335, name:'游客访问量'},
-	                {value:310, name:'信件接受量'},
-	                {value:234, name:'用户注册量'},
-	                {value:135, name:'贴文创建量'},
-	                {value:1548, name:'贴文标签量'},
-	                {value:220, name:'用户评论量'},
-	            ],
-	            label: {
-		            textStyle: {
-		            	fontSize: 14,
-		            	color: '#777',
+	$(document).on("turbolinks:load",function(){
+		let totalChart = echarts.init(document.getElementById('totalChart'));
+		let option = {
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
+		    legend: {
+		        orient: 'vertical',
+		        left: '70%',
+		        top: 'middle',
+		        data: ['游客访问量','信件接受量','用户注册量','贴文创建量','贴文标签量','用户评论量'],
+		        textStyle: {
+		        	fontSize: 16,
+		        	color: '#666',
+		        }
+		    },
+		    series : [
+		        {
+		            name: '具体数据',
+		            type: 'pie',
+		            radius : '55%',
+		            center: ['30%', '55%'],
+		            data:[
+		                {value:335, name:'游客访问量'},
+		                {value:310, name:'信件接受量'},
+		                {value:234, name:'用户注册量'},
+		                {value:135, name:'贴文创建量'},
+		                {value:1548, name:'贴文标签量'},
+		                {value:220, name:'用户评论量'},
+		            ],
+		            label: {
+			            textStyle: {
+			            	fontSize: 14,
+			            	color: '#777',
+			            }
+		            },
+		            itemStyle: {
+		            	normal: {
+		            		color:'#0084ff',
+		            		shadowBlur: 10,
+		            		shadowColor: 'rgba(0, 0, 0, 0.5)'
+		            	},
 		            }
-	            },
-	            itemStyle: {
-	            	normal: {
-	            		color:'#0084ff',
-	            		shadowBlur: 10,
-	            		shadowColor: 'rgba(0, 0, 0, 0.5)'
-	            	},
-	            }
-	        }
-	    ]
-	};
-	totalChart.setOption(option);
+		        }
+		    ]
+		};
+		totalChart.setOption(option);
+	});
 </script>
