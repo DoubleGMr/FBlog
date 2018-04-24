@@ -9,8 +9,8 @@ class Admin::ApplicationController < ActionController::Base
 
   def authorize
   	unless current_admin
+      flash[:danger]="管理员空间,请先登陆."
   		redirect_to admin_login_url
-  		flash[:danger]="管理员空间,请先登陆."
   	end
   end
 

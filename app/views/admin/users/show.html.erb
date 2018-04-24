@@ -6,7 +6,7 @@
 			<%= image_tag('pic.jpeg') %>
 		</div>
 		<div class="authorData uData">
-			<h2><strong><%= @user.name %></strong><span>Created at: <%= @user.created_at %> 
+			<h2><strong><%= @user.name %></strong><span>Created at: <%= time_now(@user.created_at) %> 
 				<a class="userChange"><span class="fa fa-edit fa-fw"></span></a></span>
 			</h2>
 			<p class="flex">

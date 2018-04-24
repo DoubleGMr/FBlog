@@ -350,7 +350,7 @@ header .session-box a{
 	padding: 5px 20px;
 }
 .post-data .comment .comment-send{
-	padding: 5px;
+	padding: 10px 5px;
 }
 .post-data .comment .comment-send input{
 	padding: 5px;
@@ -358,13 +358,13 @@ header .session-box a{
 	font-size: 1rem;
 }
 .post-data .comment .comment-send input[type="text"]{
-	width: 82%;
+	width: 84%;
 	border: 1px solid #ddd;
 	color: var(--basicColor);
 }
 .post-data .comment .comment-send input[type="submit"]{
 	width: 15%;
-	margin-left: 3%;
+	margin-left: 1%;
 }
 .content .right-other{
 	flex:1;
@@ -434,7 +434,7 @@ header .session-box a{
 .content .right-other .footer p{
 	padding: 3px 0;
 }
-.message-box,.tags-box,.userChange-box,.introduce-box{
+.message-box,.tags-box,.userChange-box,.introduce-box,.posts-box{
 	display: none;
 	position: fixed;
 	width: 100%;
@@ -445,34 +445,34 @@ header .session-box a{
 	left: 0;
 	z-index: 9999;
 }
-.message-box p.close,.tags-box p.close,.userChange-box p.close,.introduce-box p.close{
+.message-box p.close,.tags-box p.close,.userChange-box p.close,.introduce-box p.close,.posts-box p.close{
 	position: absolute;
 	right: 10px;
 	top: 5px;
 	font-size: 2rem;
 	color: #fff;
 }
-.message-box>div,.tags-box>div,.userChange-box>div,.introduce-box>div{
+.message-box>div,.tags-box>div,.userChange-box>div,.introduce-box>div,.posts-box>div{
 	width: 600px;
 	background-color: var(--basicBgColor);
 	padding: 40px;
 	border-radius: 3px;
 	box-shadow: 0 1px 5px var(--shadowColor);
 }
-.message-box>div h2,.tags-box>div h2,.userChange-box div h2,.introduce-box div h2{
+.message-box>div h2,.tags-box>div h2,.userChange-box div h2,.introduce-box div h2,.posts-box div h2{
 	text-align: center;
 }
-.message-box>div form>div,.tags-box>div form>div,.userChange-box>div form>div,.introduce-box>div form>div{
+.message-box>div form>div,.tags-box>div form>div,.userChange-box>div form>div,.introduce-box>div form>div.posts-box>div form>div{
 	margin: 15px 0;
 }
-.message-box>div form input,.message-box>div form textarea,.tags-box>div form input,.tags-box>div form textarea,.userChange-box>div form input,.userChange-box>div form textarea,.introduce-box>div form input,.introduce-box>div form textarea{
+.message-box>div form input,.message-box>div form textarea,.tags-box>div form input,.tags-box>div form textarea,.userChange-box>div form input,.userChange-box>div form textarea,.introduce-box>div form input,.introduce-box>div form textarea,.posts-box>div form input,.posts-box>div form textarea{
 	width: 100%;
 	padding: 10px;
 	font-size: 1rem;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 }
-.message-box>div form textarea,.tags-box>div form textarea,.userChange-box>div form textarea,.introduce-box>div form textarea{
+.message-box>div form textarea,.tags-box>div form textarea,.userChange-box>div form textarea,.introduce-box>div form textarea,.posts-box>div form textarea{
 	height: 200px;
 }
 
@@ -760,6 +760,41 @@ header .session-box a{
 }
 .rightSession>div div.field_with_errors{
 	padding: 0;
+}
+.posts-box>div{
+	width: 800px;
+}
+.posts-box form>div{
+	padding: 10px 20px;
+}
+.posts-box input[type="text"],.posts-box textarea,.posts-box select{
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	font-size: 1rem;
+	border-radius: 2px;
+}
+.posts-box input[type="checkbox"]{
+	width: auto;
+	-webkit-appearance: checkbox;
+	   -moz-appearance: checkbox;
+	        appearance: checkbox;
+}
+.posts-box>div form textarea{
+	height: 450px;
+}
+.posts-box input[type="submit"]{
+	width: 100%;
+	font-size: 1rem;
+}
+.posts-box select{
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	background: url(down.png) no-repeat 97% 50%;
+	cursor: pointer;
+	outline: none;
+	color: #777;
 }
 
 /* animate */

@@ -1,0 +1,72 @@
+<div class="right-other">
+		<% if logged_in? %>
+			<div class="user flex flex-center">
+				<div class="img">
+					<%= image_tag('pic.jpeg') %>
+				</div>
+				<p>
+					<%= link_to current_user do %>
+						<%= current_user.name %> <span class="fa fa-gg fa-fw"></span>
+					<% end %>
+				</p>
+				<div class="user-data">
+					<ul class="flex">
+						<li>
+							<%= link_to '#' do %>150<% end %>
+							<p>评论数</p>
+						</li>
+						<li>
+							<a>50</a>
+							<p>点赞数</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<% else %>
+			<div class="user flex flex-center">
+				<div class="img">
+					<%= image_tag('pic.jpeg') %>
+				</div>
+				<p>
+					<%= link_to login_path do %>
+						登陆进行评论
+					<% end %>
+				</p>
+				<div class="user-data">
+					<ul class="flex">
+						<li>
+							<%= link_to '#' do %>--<% end %>
+							<p>评论数</p>
+						</li>
+						<li>
+							<a>--</a>
+							<p>点赞数</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+		<div class="recommend">
+			<h3>Recommend 学习推荐网址</h3>
+			<ul class="flex">
+				<li><a href="#">W3School</a></li>
+				<li><a href="#">Imooc</a></li>
+				<li><a href="#">Runoob</a></li>
+				<li><a href="#">RubyChina</a></li>
+				<li><a href="#">Youtube</a></li>
+				<li><a href="#">Dribbble</a></li>
+				<li><a href="#">Behance</a></li>
+				<li><a href="#">Heroku</a></li>
+				<li><a href="#">Youku</a></li>
+				<li><a href="#">Bilibili</a></li>
+				<li><a href="#">BootCDN</a></li>
+				<li><a href="#">FontAwesome</a></li>
+				<li><a href="#">GitHub</a></li>
+			</ul>
+		</div>
+		<div class="footer">
+			<p>本站归个人版权所属&copycopyright2018</p>
+			<p>如若发现违法信息, 请及时联系作者删除</p>
+			<p>若有其他疑问, 欢迎随时向作者咨询</p>
+		</div>
+	</div>

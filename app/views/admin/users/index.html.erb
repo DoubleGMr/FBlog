@@ -1,0 +1,63 @@
+<div class="container flex">
+	<div class="left-list">
+		<div class="tags flex">
+			<ul class="flex">
+				<li><a href="#">Posts</a></li>
+				<li><a href="#">Users</a></li>
+				<li><a href="#">Comments</a></li>
+				<li><a href="#">Setting</a></li>
+				<li><a class="more"><span class="fa fa-plus-square fa-fw"></span> more</a></li>
+			</ul>
+			<div class="down-tags">
+				<ul class="flex">
+					<li><a href="#">暂无其他...</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="total-data">
+			<div class="total-users">
+				<h3 class="flex">
+					All Users' Data
+					<span>
+						<%= link_to admin_all_users_delete_path,method: :delete,class: 'button buttonStyle1',data:{confirm:'确定要删除所有的用户吗?请慎重考虑'} do %>
+							<span class="fa fa-trash fa-fw"></span>Delete ALL
+						<% end %>
+					</span>
+				</h3>
+				<div class="users-list">
+					<ul>
+						<% @users.each do |user| %>
+						<li>
+							<div class="post-data">
+								<div class="pd">
+									<h3 class="flex">
+										<%= link_to admin_user_path(user) do %>
+											Create at: <%= time_now(user.created_at) %>
+										<% end %>
+										<span>
+											<%= link_to admin_user_path(user),class: 'buttonStyle3 button' do %>
+												<span class="fa fa-eye fa-fw">
+											<% end %>
+											<%= link_to admin_user_path(user,f_a: 'dashboard'),class: 'buttonStyle3 button',method: :delete,data:{confirm: "确认删除#{user.name}吗？"} do %>
+												<span class="fa fa-trash fa-fw">
+											<% end %>
+										</span>
+									</h3>
+								</div>
+								<div class="img flex">
+									<%= image_tag('pic.jpeg',class: "middleImg") %>
+									<div>
+										<span><strong>Name:</strong> <%= user.name %></span>
+										<span><strong>Email:</strong> <%= user.email %></span>
+									</div>	
+								</div>
+							</div>
+						</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<%= render 'generalPurpose/right_admin' %>
+</div>

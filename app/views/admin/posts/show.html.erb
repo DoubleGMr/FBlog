@@ -1,0 +1,89 @@
+<div class="container flex">
+	<div class="left-list">
+		<div class="tags flex">
+			<ul class="flex">
+				<li>
+					<h3>
+						<span class="fa fa-bookmark fa-fw"></span>
+						<span class="pls"><%= @post.title %></span>
+					</h3>
+				</li>
+			</ul>
+		</div>
+		<div class="post-list">
+			<ul>
+				<li>
+					<div class="post-data">
+						<div class="pd">
+							<h3 class="flex pl">
+								<a href="#">Create at: <%= time_now(@post.created_at) %></a>
+								<span>
+									<a class="buttonStyle2 button post-create"><span class="fa fa-edit fa-fw"></span></a>
+									<%= link_to admin_post_path(@post),class: 'button buttonStyle2',method: :delete,data:{confirm:"是否确定删除#{@post.title}?"} do %>
+										<span class="fa fa-trash fa-fw"></span>
+									<% end %>
+								</span>
+							</h3>
+						</div>
+						<div class="img flex">
+							<%= image_tag('pic') %>
+							<span><strong>Name:</strong> <%= @post.administrator.name %></span>
+							<span>
+								<strong>Tag:</strong> 
+								<% @post.tags.each do |tag| %>
+									<%= tag.name %>
+								<% end %>
+							</span>
+						</div>
+						<div class="cc">
+							<p><%= @post.content.html_safe %></p>
+						</div>
+						<div class="post-control">
+							<ul class="flex">
+								<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
+								<li><a><span class="fa fa-eye fa-fw"></span>1.1k</a></li>
+								<li class="comments"><a><span class="fa fa-comment fa-fw"></span>50条评论</a></li>
+							</ul>
+						</div>
+						<div class="comment" style="display: block;">
+							<h3 class="flex">
+								<p>50条评论</p>
+								<p class="close"><span class="fa fa-close fa-fw"></span></p>
+							</h3>
+							<div class="comment-list">
+								<ul>
+									<li>
+										<div class="img flex">
+											<img src="../img/pic.jpeg" alt="">
+											<span>author: Jetty</span>
+											<span>date: Sunday 14 04, 2018</span>
+										</div>
+										<p>测试发言中...</p>
+									</li>
+									<li>
+										<div class="img flex">
+											<img src="../img/pic.jpeg" alt="">
+											<span>author: Jetty</span>
+											<span>date: Sunday 14 04, 2018</span>
+										</div>
+										<p>测试发言中...</p>
+									</li>
+								</ul>
+							</div>
+							<div class="comment-send">
+								<form action="#">
+									<div class="flex">
+										<input type="text" placeholder="评论请注意说辞...">
+										<input type="submit" value="评论" class="buttonStyle2">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<%= render 'generalPurpose/right_admin' %>
+</div>
+<%= render 'generalPurpose/post_create' %>

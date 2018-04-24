@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-	@base_title = "It's Time For Reading."
+	 @base_title = "It's Time For Reading."
   end
   
   test "should get index" do

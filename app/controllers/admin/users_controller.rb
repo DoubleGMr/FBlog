@@ -12,11 +12,10 @@ class Admin::UsersController < Admin::ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "该用户资料更新成功."
-      redirect_to admin_users_url
     else
       flash[:danger] = "用户资料更新失败,请重新尝试."
-      redirect_to admin_user_url(@user)
     end
+    redirect_to admin_user_url(@user)
   end
 
   def destroy
@@ -27,6 +26,12 @@ class Admin::UsersController < Admin::ApplicationController
     else
       redirect_to admin_users_url
     end
+  end
+
+  def delete_all
+    User.delete_all
+    flash[:success] = "成功删除所有用户."
+    redirect_back(fallback_location: admin_dashboards_url)
   end
 
   private

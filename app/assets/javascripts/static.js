@@ -45,9 +45,15 @@ $(document).on("turbolinks:load",function(){
 	$('.introduceChange').click(function(){
 		actionBox($('.introduce-box'));
 	});
-	$('.close').click(function(){
-		if($('.comment').css('display')=='block'){
-			$('.comment').slideUp(300);
+	$('.post-create').click(function(){
+		actionBox($('.posts-box'));
+	});
+	$('.close').click(function(e){
+		let c = $(e.target).parents('.post-data').children('.comment');
+		if(c.css('display')=='block' && $('.posts-box').css('display')=='flex'){
+			$('.posts-box').css('display','none');
+		}else if(c.css('display')=='block' && $('.posts-box').css('display')!='flex'){
+			c.slideToggle(300);
 		}else if($('.message-box').css('display')=='flex'){
 			$('.message-box').css('display','none');
 		}else if($('.tags-box').css('display')=='flex'){
@@ -60,7 +66,12 @@ $(document).on("turbolinks:load",function(){
 			$('.error-box').fadeOut(300);
 		}else if($('.alert').length>0){
 			$('.alert').fadeOut(300);
+		}else if($('.posts-box').css('display')=='flex'){
+			$('.posts-box').css('display','none');
 		}
+	});
+	$('.in_use').click(function(){
+		alert('该标签仍在使用中,不可删除.');
 	});
 
 });
