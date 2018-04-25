@@ -1,0 +1,46 @@
+<div class="container flex">
+	<div class="left-list">
+		<div class="tags flex">
+			<ul class="flex">
+				<li>
+					<h3>
+						<span class="fa fa-slideshare fa-fw"></span>
+						<span class="pls">All Comments' Data</span>
+					</h3>
+				</li>
+			</ul>
+		</div>
+		<div class="post-list">
+			<ul>
+				<% @comments.each do |comment| %>
+				<li>
+					<div class="post-data">
+						<div class="pd">
+							<h3 class="flex pl">
+								<a>Create at: <%= time_now(comment.created_at) %></a>
+								<span>
+									<%= link_to admin_post_path(comment.post),class: 'buttonStyle3 button' do %>
+												<span class="fa fa-eye fa-fw">
+									<% end %>
+									<%= link_to admin_comment_path(comment),class: 'buttonStyle3 button',method: :delete,data:{confirm: "确认删除该评论吗？"} do %>
+										<span class="fa fa-trash fa-fw">
+									<% end %>
+								</span>
+							</h3>
+						</div>
+						<div class="img flex">
+							<%= image_tag('pic.jpeg') %>
+							<span><strong>Name:</strong> <%= comment.user.name %></span>
+							<span><strong>For:</strong> <%= comment.post.title %></span>
+						</div>
+						<div class="cc">
+							<p><%= comment.content %></p>
+						</div>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<%= render 'generalPurpose/right_admin' %>
+</div>

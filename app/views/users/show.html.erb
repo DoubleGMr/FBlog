@@ -6,8 +6,8 @@
 			<%= image_tag('pic.jpeg') %>
 		</div>
 		<div class="authorData uData">
-			<h2><strong><%= @user.name %></strong><span>Created at: <%= time_now(@user.created_at) %><span class="fa fa-gg fa-fw"></span></span></h2>
-			<p>Email: <%= @user.email %></p>
+			<h2><strong><%= current_user.name %></strong><span>Created at: <%= time_now(current_user.created_at) %><span class="fa fa-gg fa-fw"></span></span></h2>
+			<p>Email: <%= current_user.email %></p>
 		</div>
 	</div>
 	<div class="aboutContent">
@@ -18,51 +18,27 @@
 		</div>
 		<div class="post-list">
 			<ul>
-				<li>
-					<div class="post-data">
-						<div class="pd">
-							<h3 class="flex pl">
-								<a href="#"><strong>For:</strong> one post's name</a>
-							</h3>
+				<% if current_user.comments.count > 0 %>
+					<% current_user.comments.each do |comment| %>
+					<li>
+						<div class="post-data">
+							<div class="pd">
+								<h3 class="flex pl">
+									<a href="#"><strong>For:</strong> <%= comment.post.title %></a>
+								</h3>
+							</div>
+							<div class="img flex">
+								<span>Create at: <%= time_now(comment.created_at) %></span>
+							</div>
+							<div class="cc">
+								<p><%= comment.content %></p>
+							</div>
 						</div>
-						<div class="img flex">
-							<span>Create at: Thursday 19 04,2018</span>
-						</div>
-						<div class="cc">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="post-data">
-						<div class="pd">
-							<h3 class="flex pl">
-								<a href="#"><strong>For:</strong> one post's name</a>
-							</h3>
-						</div>
-						<div class="img flex">
-							<span>Create at: Thursday 19 04,2018</span>
-						</div>
-						<div class="cc">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="post-data">
-						<div class="pd">
-							<h3 class="flex pl">
-								<a href="#"><strong>For:</strong> one post's name</a>
-							</h3>
-						</div>
-						<div class="img flex">
-							<span>Create at: Thursday 19 04,2018</span>
-						</div>
-						<div class="cc">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-						</div>
-					</div>
-				</li>
+					</li>
+					<% end %>
+				<% else %>
+					<li>用户暂未评论任何帖文.</li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

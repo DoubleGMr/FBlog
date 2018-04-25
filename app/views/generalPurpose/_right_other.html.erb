@@ -12,7 +12,7 @@
 				<div class="user-data">
 					<ul class="flex">
 						<li>
-							<%= link_to '#' do %>150<% end %>
+							<%= link_to '#' do %><%= current_user.comments.count %><% end %>
 							<p>评论数</p>
 						</li>
 						<li>

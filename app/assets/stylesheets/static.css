@@ -145,6 +145,9 @@ img{
 .close:hover{
 	color: var(--topicColor);
 }
+.color{
+	color: var(--topicColor);
+}
 
 header{
 	position: fixed;
@@ -233,10 +236,19 @@ header .session-box a{
 .left-list .tags>ul{
 	flex:1;
 	text-transform: uppercase;
+	align-items: center;
+	font-size: 1.1rem;
+}
+.left-list .tags>ul>div{
+	flex: 1;
+	justify-content: flex-end;
+}
+.left-list .tags>ul>div .button{
+	padding: 1px 10px;
 }
 .left-list .tags ul li a{
 	display: block;
-	padding: 0 10px;
+	padding: 1px 10px;
 }
 .left-list .tags ul li a.more{
 	color: var(--topicColor);
@@ -269,14 +281,21 @@ header .session-box a{
 }
 .left-list .post-list .post-data .img span,.total-data .post-data .img span{
 	display: block;
-	padding: 0 8px 0 5px;
+	padding: 0 8px 0 10px;
 	line-height: var(--smallImg);
+}
+.left-list .post-list .post-data .img>div{
+	padding: 0 15px;
 }
 .post-data .tag{
 	align-items: center;
+	text-transform: uppercase;
 	border-left: 10px solid var(--topicColor);
 	padding-left: 10px;
-	text-transform: uppercase;
+}
+.post-data p.tag{
+	font-size: 1.1rem;
+	font-weight: bolder;
 }
 .post-data .tag>span{
 	flex: 1;
@@ -289,6 +308,7 @@ header .session-box a{
 	padding: 0 3px;
 	border-radius: 2px;
 	margin-left: 5px;
+	font-size: 1rem;
 }
 .post-data .tag span{
 	color: var(--topicColor);
@@ -308,6 +328,10 @@ header .session-box a{
 }
 .post-data .pd h3{
 	padding: 5px 0;
+	border:0;
+}
+.post-data .pd h3 strong{
+	color: var(--topicColor);
 }
 .post-data .post-control{
 	margin: 15px 0;
@@ -338,6 +362,8 @@ header .session-box a{
 }
 .post-data .comment h3 p{
 	flex:1;
+	padding-left: 18px;
+	letter-spacing: 1px;
 }
 .post-data .comment h3 p.close{
 	text-align: right;
@@ -365,6 +391,13 @@ header .session-box a{
 .post-data .comment .comment-send input[type="submit"]{
 	width: 15%;
 	margin-left: 1%;
+}
+.post-data .comment .comment-send a{
+	display: block;
+	width: 15%;
+	margin-left: 1%;
+	text-align: center;
+	border-radius: 2px;
 }
 .content .right-other{
 	flex:1;
@@ -422,6 +455,7 @@ header .session-box a{
 	color: var(--topicColor);
 	border-radius: 8px;
 	font-size: .9rem;
+	font-weight: bolder;
 }
 .content .right-other .recommend ul li a:hover{
 	color: #aaa;
@@ -677,7 +711,7 @@ header .session-box a{
 .total-data .data-box button:hover a{
 	display: flex;
 }
-.total-data .post-data .img  span strong{
+.post-data .img  span strong{
 	color: var(--topicColor);
 }
 .total-data>div>ul>li,.total-data>div>div>ul>li{

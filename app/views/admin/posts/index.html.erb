@@ -2,11 +2,12 @@
 	<div class="left-list">
 		<div class="tags flex">
 			<ul class="flex">
-				<li><a href="#">Posts</a></li>
-				<li><a href="#">Users</a></li>
-				<li><a href="#">Comments</a></li>
-				<li><a href="#">Setting</a></li>
-				<li><a class="more"><span class="fa fa-plus-square fa-fw"></span> more</a></li>
+				<li>
+					<h3>
+						<span class="fa fa-wheelchair-alt fa-fw"></span>
+						<span class="pls">All Posts' Data</span>
+					</h3>
+				</li>
 			</ul>
 			<div class="sort flex">
 				<ul class="flex sort">
@@ -24,31 +25,35 @@
 				<% @posts.each do |post| %>
 					<li>
 						<div class="post-data">
-							<p class="tag flex">
-								文章标签: 
-								<% post.tags.each do |tag| %>
-									<%= tag.name %>
-								<% end %>
-								(Publish: <%= post.is_publish %>)
-								<span class="flex">
-									<span>
-										<a href="#" class="button"><span class="fa fa-chain fa-fw"></span></a>
-										<%= link_to admin_post_path(post),class: 'button' do %>
-											<span class="fa fa-edit fa-fw"></span>
+							<div class="pd">
+								<h3 class="flex pl tag">
+									帖文所属标签:
+									<strong style="padding-left: 5px;">
+										<% post.tags.each do |tag| %>
+											<%= tag.name %>
 										<% end %>
-										<%= link_to admin_post_path(post),class: 'button',method: :delete,data:{confirm:"是否确定删除#{post.title}?"} do %>
-											<span class="fa fa-trash fa-fw"></span>
-										<% end %>
+									</strong>
+									<span class="flex">
+										<span>
+											<a href="#" class="button"><span class="fa fa-chain fa-fw"></span></a>
+											<%= link_to admin_post_path(post),class: 'button' do %>
+												<span class="fa fa-edit fa-fw"></span>
+											<% end %>
+											<%= link_to admin_post_path(post),class: 'button',method: :delete,data:{confirm:"是否确定删除#{post.title}?"} do %>
+												<span class="fa fa-trash fa-fw"></span>
+											<% end %>
+										</span>
 									</span>
-								</span>
-							</p>
+								</h3>
+							</div>
+							
 							<div class="img flex">
 								<%= image_tag('pic.jpeg') %>
 								<span>author: <%= post.administrator.name %></span>
-								<span>date: <%= time_now(post.created_at) %></span>
+								<span>created_at: <%= time_now(post.created_at) %></span>
 							</div>
 							<div class="pd">
-								<h3 class="flex">
+								<h3 class="flex tag">
 									<%= link_to admin_post_path(post) do%>
 										<%= post.title %>
 									<% end %>
@@ -59,41 +64,27 @@
 								<ul class="flex">
 									<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
 									<li><a><span class="fa fa-eye fa-fw"></span>1.1k</a></li>
-									<li class="comments"><a><span class="fa fa-comment fa-fw"></span>50条评论</a></li>
+									<li class="comments"><a><span class="fa fa-comment fa-fw"></span><%= post.comments.count %>条评论</a></li>
 								</ul>
 							</div>
 							<div class="comment">
 								<h3 class="flex">
-									<p>50条评论</p>
+									<p>Posts共<span class="color"><%= post.comments.count %></span>条评论</p>
 									<p class="close"><span class="fa fa-close fa-fw"></span></p>
 								</h3>
 								<div class="comment-list">
 									<ul>
-										<li>
-											<div class="img flex">
-												<img src="../img/pic.jpeg" alt="">
-												<span>author: Jetty</span>
-												<span>date: Sunday 14 04, 2018</span>
-											</div>
-											<p>测试发言中...</p>
-										</li>
-										<li>
-											<div class="img flex">
-												<img src="../img/pic.jpeg" alt="">
-												<span>author: Jetty</span>
-												<span>date: Sunday 14 04, 2018</span>
-											</div>
-											<p>测试发言中...</p>
-										</li>
+										<% post.comments.each do |comment| %>
+											<li>
+												<div class="img flex">
+													<%= image_tag('pic.jpeg') %>
+													<span>User: <%= comment.user.name %></span>
+													<span>date: <%= time_now(comment.created_at) %></span>
+												</div>
+												<p><%= comment.content %></p>
+											</li>
+										<% end %>
 									</ul>
-								</div>
-								<div class="comment-send">
-									<form action="#">
-										<div class="flex">
-											<input type="text" placeholder="评论请注意说辞...">
-											<input type="submit" value="评论" class="buttonStyle2">
-										</div>
-									</form>
 								</div>
 							</div>
 						</div>

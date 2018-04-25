@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new,:create,:edit,:update]
   resources :posts, only: [:index,:show]
+  resources :comments, only: [:create]
 
   namespace :admin do
     resources :dashboards ,only: :index
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     resources :users,only: [:index,:show,:update,:destroy]
     resources :posts,except: [:new,:edit]
     resources :tags, only: [:create,:destroy]
+    resources :comments, only: [:index,:destroy]
 
      match 'all_users_delete', to: 'admin/users#delete_all', via: :delete
   end

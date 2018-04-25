@@ -42,41 +42,27 @@
 							<ul class="flex">
 								<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
 								<li><a><span class="fa fa-eye fa-fw"></span>1.1k</a></li>
-								<li class="comments"><a><span class="fa fa-comment fa-fw"></span>50条评论</a></li>
+								<li class="comments"><a><span class="fa fa-comment fa-fw"></span><%= @post.comments.count %>条评论</a></li>
 							</ul>
 						</div>
 						<div class="comment" style="display: block;">
 							<h3 class="flex">
-								<p>50条评论</p>
+								<p>Posts共<span class="color"><%= @post.comments.count %></span>条评论</p>
 								<p class="close"><span class="fa fa-close fa-fw"></span></p>
 							</h3>
 							<div class="comment-list">
 								<ul>
-									<li>
-										<div class="img flex">
-											<img src="../img/pic.jpeg" alt="">
-											<span>author: Jetty</span>
-											<span>date: Sunday 14 04, 2018</span>
-										</div>
-										<p>测试发言中...</p>
-									</li>
-									<li>
-										<div class="img flex">
-											<img src="../img/pic.jpeg" alt="">
-											<span>author: Jetty</span>
-											<span>date: Sunday 14 04, 2018</span>
-										</div>
-										<p>测试发言中...</p>
-									</li>
+									<% @post.comments.each do |comment| %>
+										<li>
+											<div class="img flex">
+												<%= image_tag('pic.jpeg') %>
+												<span>User: <%= comment.user.name %></span>
+												<span>date: <%= time_now(comment.created_at) %></span>
+											</div>
+											<p><%= comment.content %></p>
+										</li>
+									<% end %>
 								</ul>
-							</div>
-							<div class="comment-send">
-								<form action="#">
-									<div class="flex">
-										<input type="text" placeholder="评论请注意说辞...">
-										<input type="submit" value="评论" class="buttonStyle2">
-									</div>
-								</form>
 							</div>
 						</div>
 					</div>

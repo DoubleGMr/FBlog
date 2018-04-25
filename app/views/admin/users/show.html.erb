@@ -25,60 +25,30 @@
 		</div>
 		<div class="post-list">
 			<ul>
-				<li>
-					<div class="post-data">
-						<div class="pd">
-							<h3 class="flex pl">
-								<a href="#"><strong>For:</strong> one post's name</a>
-								<span>
-									<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-								</span>
-							</h3>
+				<% if @user.comments.count > 0 %>
+					<% @user.comments.each do |comment| %>
+					<li>
+						<div class="post-data">
+							<div class="pd">
+								<h3 class="flex pl">
+									<a href="#"><strong>For:</strong> <%= comment.post.title %></a>
+									<span>
+										<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
+									</span>
+								</h3>
+							</div>
+							<div class="img flex">
+								<span>Create at: <%= time_now(comment.created_at) %></span>
+							</div>
+							<div class="cc">
+								<p><%= comment.content %></p>
+							</div>
 						</div>
-						<div class="img flex">
-							<span>Create at: Thursday 19 04,2018</span>
-						</div>
-						<div class="cc">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="post-data">
-						<div class="pd">
-							<h3 class="flex pl">
-								<a href="#"><strong>For:</strong> one post's name</a>
-								<span>
-									<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-								</span>
-							</h3>
-						</div>
-						<div class="img flex">
-							<span>Create at: Thursday 19 04,2018</span>
-						</div>
-						<div class="cc">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="post-data">
-						<div class="pd">
-							<h3 class="flex pl">
-								<a href="#"><strong>For:</strong> one post's name</a>
-								<span>
-									<a href="#" class="buttonStyle3 button"><span class="fa fa-trash fa-fw"></span></a>
-								</span>
-							</h3>
-						</div>
-						<div class="img flex">
-							<span>Create at: Thursday 19 04,2018</span>
-						</div>
-						<div class="cc">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis natus voluptatum impedit illum repellat sed, officia nisi accusantium doloremque! Ullam temporibus fugit perferendis soluta et beatae quaerat obcaecati, impedit perspiciatis!</p>
-						</div>
-					</div>
-				</li>
+					</li>
+					<% end %>
+				<% else %>
+					<li>用户暂未评论任何帖文.</li>
+				<% end %>
 			</ul>
 		</div>
 	</div>
