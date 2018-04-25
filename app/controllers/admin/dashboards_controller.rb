@@ -1,9 +1,9 @@
 class Admin::DashboardsController < Admin::ApplicationController
   def index
-  	@users = User.last(3)
+  	@users = User.all
   	@tags = Tag.all
-  	@posts = Post.last(3)
+  	@posts = Post.all
   	@tag = Tag.new
-  	@comments = Comment.last(3)
+  	@comments = Comment.all
   end
 end

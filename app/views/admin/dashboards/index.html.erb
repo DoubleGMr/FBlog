@@ -63,7 +63,7 @@
 					</span>
 				</h3>
 				<ul>
-					<% @posts.each do |post| %>
+					<% @posts.last(3).each do |post| %>
 					<li>
 						<div class="post-data">
 							<div class="pd">
@@ -129,7 +129,7 @@
 				</h3>
 				<div class="users-list">
 					<ul>
-						<% @users.each do |user| %>
+						<% @users.last(3).each do |user| %>
 						<li>
 							<div class="post-data">
 								<div class="pd">
@@ -171,7 +171,7 @@
 				</h3>
 				<div class="comments-list">
 					<ul>
-						<% @comments.each do |comment| %>
+						<% @comments.last(3).each do |comment| %>
 						<li>
 							<div class="post-data">
 								<div class="pd">
@@ -206,10 +206,10 @@
 	<%= render 'generalPurpose/right_admin' %>
 </div>
 <%= render 'generalPurpose/dashboard' %>
-<input type="hidden" id="users" value="<%= User.count %>">
-<input type="hidden" id="posts" value="<%= Post.count %>">
-<input type="hidden" id="tags" value="<%= Tag.count %>">
-<input type="hidden" id="comments" value="<%= Comment.count %>">
+<input type="hidden" id="users" value="<%= @users.count %>">
+<input type="hidden" id="posts" value="<%= @posts.count %>">
+<input type="hidden" id="tags" value="<%= @tags.count %>">
+<input type="hidden" id="comments" value="<%= @comments.count %>">
 
 
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.min.js"></script>
