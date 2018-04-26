@@ -44,8 +44,8 @@
 								<div class="post-control">
 									<ul class="flex">
 										<li class="vote">
-											<%= link_to '#',class:'active' do %>
-												<span class="fa fa-star fa-fw"></span>200
+											<%= link_to posts_vote_path(post_id: post.id),class:'active' do %>
+												<span class="fa fa-star fa-fw"></span><%= count(post.votes.count) %>
 											<% end %>
 										</li>
 										<li><a><span class="fa fa-eye fa-fw"></span><%= count(post.views.count) %></a></li>
@@ -76,11 +76,7 @@
 											<div class="flex">
 												<%= f.hidden_field :post_id, value: post.id %>
 												<%= f.text_field :content, placeholder: '评论请注意说辞...' %>
-												<% if logged_in? %>
-													<%= f.submit "评论",class: 'buttonStyle2' %>
-												<% else %>
-													<%= link_to '评论', login_path,class: 'buttonStyle2' %>
-												<% end %>
+												<%= f.submit "评论",class: 'buttonStyle2' %>
 											</div>
 										<% end %>
 									</div>

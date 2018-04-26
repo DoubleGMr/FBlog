@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'static_pages#index'
   get '/about',to:'static_pages#about'
   get '/sign',to:'users#new'
@@ -11,11 +12,12 @@ Rails.application.routes.draw do
   post '/admin/login',to:'admin/sessions#create'
   delete '/admin/logout',to:'admin/sessions#destroy'
   
-  resources :users
+  resources :users, only: [:new,:create,:show]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new,:create,:edit,:update]
   resources :posts, only: [:index,:show]
   resources :comments, only: [:create]
+  match 'posts_vote', to: 'static_pages#posts_vote', via: :get
 
   namespace :admin do
     resources :dashboards ,only: :index

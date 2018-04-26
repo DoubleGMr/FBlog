@@ -88,7 +88,7 @@
 							</div>
 							<div class="post-control">
 								<ul class="flex">
-									<li class="vote"><a href="#" class="active"><span class="fa fa-star fa-fw"></span>200</a></li>
+									<li class="vote"><a class="active"><span class="fa fa-star fa-fw"></span><%= count(post.votes.count) %></a></li>
 									<li><a><span class="fa fa-eye fa-fw"></span><%= count(post.views.count) %></a></li>
 									<li class="comments"><a><span class="fa fa-comment fa-fw"></span><%= post.comments.count %>条评论</a></li>
 								</ul>
@@ -208,7 +208,7 @@
 <%= render 'generalPurpose/dashboard' %>
 <input type="hidden" id="users" value="<%= @users.count %>">
 <input type="hidden" id="posts" value="<%= @posts.count %>">
-<input type="hidden" id="tags" value="<%= @tags.count %>">
+<input type="hidden" id="views" value="<%= @post_views.count %>">
 <input type="hidden" id="comments" value="<%= @comments.count %>">
 
 
@@ -229,7 +229,7 @@
 		        orient: 'vertical',
 		        left: '70%',
 		        top: 'middle',
-		        data: ['游客访问量','信件接受量','用户注册量','贴文创建量','贴文标签量','用户评论量'],
+		        data: ['游客访问量','信件接受量','用户注册量','贴文创建量','贴文阅读量','用户评论量'],
 		        textStyle: {
 		        	fontSize: 16,
 		        	color: '#666',
@@ -246,7 +246,7 @@
 		                {value:3, name:'信件接受量'},
 		                {value:users, name:'用户注册量'},
 		                {value:posts, name:'贴文创建量'},
-		                {value:tags, name:'贴文标签量'},
+		                {value:views, name:'贴文阅读量'},
 		                {value:comments, name:'用户评论量'},
 		            ],
 		            label: {

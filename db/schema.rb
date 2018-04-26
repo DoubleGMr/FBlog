@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426040456) do
+ActiveRecord::Schema.define(version: 20180426044820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,10 +83,19 @@ ActiveRecord::Schema.define(version: 20180426040456) do
     t.index ["post_id"], name: "index_views_on_post_id"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.string "ip"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_votes_on_post_id"
+  end
+
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "administrators"
   add_foreign_key "tag_posts", "posts"
   add_foreign_key "tag_posts", "tags"
   add_foreign_key "views", "posts"
+  add_foreign_key "votes", "posts"
 end

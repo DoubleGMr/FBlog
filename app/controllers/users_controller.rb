@@ -28,13 +28,7 @@ class UsersController < ApplicationController
   	params.require(:user).permit(:name,:email,:password,:password_confirmation)
   end
 
-  # 确保用户已登录 
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "请先登陆." 
-      redirect_to login_url
-    end
-  end
+  
 
   # 确保是正确的用户 
   def correct_user
