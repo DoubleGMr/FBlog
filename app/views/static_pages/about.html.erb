@@ -7,7 +7,7 @@
 			<%= image_tag('pic.jpeg') %>
 		</div>
 		<div class="authorData">
-			<h2><strong><%= Administrator.first.name %></strong> <span>Web前端开发者<a href="#" class="introduceChange"><span class="fa fa-gg fa-fw"></span></a></span></h2>
+			<h2><strong><%= Administrator.first.try(:name) %></strong> <span>Web前端开发者<a href="#" class="introduceChange"><span class="fa fa-gg fa-fw"></span></a></span></h2>
 			<p>世界那么大,总归得撒开步子到处去望望,看看那妖娆迷人的世界。</p>
 		</div>
 	</div>
@@ -19,17 +19,17 @@
 			</div>
 			<div>
 				<h3>作者技术知识介绍<span>(Knowledge introduction)</span></h3>
-				<%= @about.try(:knowledge).html_safe %>
+				<%= sanitize(@about.try(:knowledge)) %>
 			</div>
 		</div>
 		<div class="authorBasicData">
 			<div>
 				<h3>作者职业经历<span>(work experience)</span></h3>
-				<%= @about.try(:exception).html_safe %>
+				<%= sanitize(@about.try(:exception)) %>
 			</div>
 			<div class="contact">
 				<h3>作者联系方式<span>(Contact information)</span></h3>
-				<%= @about.try(:contact).html_safe %>
+				<%= sanitize(@about.try(:contact)) %>
 			</div>
 		</div>
 		<div class="aboutWeb">

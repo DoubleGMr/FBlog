@@ -1,6 +1,10 @@
 class Admin::PostsController < Admin::ApplicationController
   def index
-  	@posts = Post.all
+    if params[:search]
+      @posts = Post.where("title LIKE ?","%#{params[:search]}%").order(id: :desc)
+    else
+      @posts = Post.all.order(id: :desc)
+    end
     @post = Post.new
   end
 

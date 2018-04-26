@@ -10,11 +10,13 @@
 			<div class="sort flex">
 				<ul class="flex sort">
 					<li>
-						<%= link_to '#' do %>
-							<span class="fa fa-exchange fa-fw"></span>热门排序
+						<%= link_to root_path(sort: 1,tag: @tag,search: @search) do %>
+							<span class="fa fa-exchange fa-fw"></span>时间升序
 						<% end %>
 					</li> | 
-					<li><a href="#">时间排序</a></li>
+					<li>
+						<%= link_to '时间降序', root_path(sort: 2,tag: @tag,search: @search) %>
+					</li>
 				</ul>
 			</div>
 			<div class="down-tags">
@@ -85,7 +87,7 @@
 						</li>
 					<% end %>
 				<% else %>
-					<li>标签下暂无文章,敬请期待</li>
+					<li>没有相关的贴文,敬请期待</li>
 				<% end %>
 			</ul>
 		</div>
