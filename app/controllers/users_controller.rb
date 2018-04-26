@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @message = Message.new
   end
 
   private

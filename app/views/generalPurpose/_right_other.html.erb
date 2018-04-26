@@ -1,51 +1,28 @@
 <div class="right-other">
-		<% if logged_in? %>
-			<div class="user flex flex-center">
-				<div class="img">
-					<%= image_tag('pic.jpeg') %>
-				</div>
-				<p>
+		<div class="user flex flex-center">
+			<div class="img">
+				<%= image_tag('pic.jpeg') %>
+			</div>
+			<p>
+				<% if logged_in? %>
 					<%= link_to current_user do %>
 						<%= current_user.name %> <span class="fa fa-gg fa-fw"></span>
 					<% end %>
-				</p>
-				<div class="user-data">
-					<ul class="flex">
-						<li>
-							<%= link_to '#' do %><%= current_user.comments.count %><% end %>
-							<p>评论数</p>
-						</li>
-						<li>
-							<a>50</a>
-							<p>点赞数</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		<% else %>
-			<div class="user flex flex-center">
-				<div class="img">
-					<%= image_tag('pic.jpeg') %>
-				</div>
-				<p>
+				<% else %>
 					<%= link_to login_path do %>
 						登陆进行评论
 					<% end %>
-				</p>
-				<div class="user-data">
-					<ul class="flex">
-						<li>
-							<%= link_to '#' do %>--<% end %>
-							<p>评论数</p>
-						</li>
-						<li>
-							<a>--</a>
-							<p>点赞数</p>
-						</li>
-					</ul>
-				</div>
+				<% end %>
+			</p>
+			<div class="user-data">
+				<ul class="flex">
+					<li>
+						<a href="#"><span class="fa fa-calendar-minus-o fa-fw"></span><span class="weekDate"></span></a>
+						<p>国历日期: <span class="clearDate"></span></p>
+					</li>
+				</ul>
 			</div>
-		<% end %>
+		</div>
 		<div class="recommend">
 			<h3>Recommend 学习推荐网址</h3>
 			<ul class="flex">
