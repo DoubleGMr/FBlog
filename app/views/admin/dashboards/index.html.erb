@@ -208,8 +208,9 @@
 <%= render 'generalPurpose/dashboard' %>
 <input type="hidden" id="users" value="<%= @users.count %>">
 <input type="hidden" id="posts" value="<%= @posts.count %>">
-<input type="hidden" id="views" value="<%= @post_views.count %>">
+<input type="hidden" id="views" value="<%= @post_views %>">
 <input type="hidden" id="comments" value="<%= @comments.count %>">
+<input type="hidden" id="visits" value="<%= @visits %>">
 
 
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.min.js"></script>
@@ -218,8 +219,9 @@
 		let totalChart = echarts.init(document.getElementById('totalChart'));
 		let users = $('#users').val();
 		let posts = $('#posts').val();
-		let tags = $('#tags').val();
+		let views = $('#views').val();
 		let comments = $('#comments').val();
+		let visits = $('#visits').val();
 		let option = {
 		    tooltip : {
 		        trigger: 'item',
@@ -242,7 +244,7 @@
 		            radius : '55%',
 		            center: ['30%', '55%'],
 		            data:[
-		                {value:1, name:'游客访问量'},
+		                {value:visits, name:'游客访问量'},
 		                {value:3, name:'信件接受量'},
 		                {value:users, name:'用户注册量'},
 		                {value:posts, name:'贴文创建量'},

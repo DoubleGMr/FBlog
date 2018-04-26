@@ -8,6 +8,10 @@ class StaticPagesController < ApplicationController
  	 end
   	@tags = Tag.all
   	@comment = Comment.new
+    ip = request.remote_ip
+    if !Visit.find_by(ip: ip)
+      Visit.create!(ip: ip)
+    end
   end
 
   def about
