@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  introduce: MyString
+  knowledge: MyString
+  exception: MyText
+  contact: MyText
+
+two:
+  introduce: MyString
+  knowledge: MyString
+  exception: MyText
+  contact: MyText

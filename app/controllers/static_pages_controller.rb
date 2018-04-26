@@ -17,6 +17,7 @@ class StaticPagesController < ApplicationController
 
   def about
     @message = Message.new
+    @about = About.first
   end
 
   def posts_vote

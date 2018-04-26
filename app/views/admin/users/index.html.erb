@@ -1,3 +1,4 @@
+<% provide(:title,'User') %>
 <div class="container flex">
 	<div class="left-list">
 		<div class="tags flex">
@@ -9,7 +10,7 @@
 					</h3>
 				</li>
 				<div class="flex">
-					<%= link_to admin_all_users_delete_path	,class: 'button buttonStyle1',data:{confirm:"确定要删除所有注册用户吗?"} do %>
+					<%= link_to admin_all_users_delete_path	,class: 'button buttonStyle1',method: :delete,data:{confirm:"确定要删除所有注册用户吗?"} do %>
 						<span class="fa fa-trash fa-fw"></span>Delete
 					<% end %>
 				</div>

@@ -1,11 +1,11 @@
+<% provide(:title,'Dashboard') %>
 <div class="container flex">
 	<div class="left-list">
 		<div class="tags flex">
 			<ul class="flex">
-				<li><a href="#">Posts</a></li>
-				<li><a href="#">Users</a></li>
-				<li><a href="#">Comments</a></li>
-				<li><a href="#">Setting</a></li>
+				<li><%= link_to 'Posts',admin_posts_path %></li>
+				<li><%= link_to 'Users',admin_users_path %></li>
+				<li><%= link_to 'Comments',admin_comments_path %></li>
 				<li><a class="more"><span class="fa fa-plus-square fa-fw"></span> more</a></li>
 			</ul>
 			<div class="sort flex">

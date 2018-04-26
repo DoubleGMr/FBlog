@@ -3,7 +3,11 @@
 			<div class="img">
 				<%= image_tag('pic.jpeg') %>
 			</div>
-			<p><a href="#"><%= current_admin.name %> <span class="fa fa-edit fa-fw"></span></a></p>
+			<p>
+				<%= link_to edit_admin_administrator_path(current_admin) do %>
+					<%= current_admin.name %> <span class="fa fa-edit fa-fw"></span>
+				<% end %>
+			</p>
 			<div class="user-data">
 				<ul class="flex">
 					<li>

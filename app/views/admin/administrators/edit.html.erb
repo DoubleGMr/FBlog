@@ -1,2 +1,19 @@
-<h1>Admin::Administrators#edit</h1>
-<p>Find me in app/views/admin/administrators/edit.html.erb</p>
+<% provide(:title,'Admin Change') %>
+<%= render 'generalPurpose/error_message_admin' %>
+<%= form_for(@admin,url: admin_administrator_path) do |f| %>
+	<div>
+		<%= f.text_field :name,placeholder: '请输入你的用户名...' %>
+	</div>
+	<div>
+		<%= f.email_field :email,placeholder: '请输入你的邮箱...' %>
+	</div>
+	<div>
+		<%= f.password_field :password,placeholder: '请输入你的密码...' %>
+	</div>
+	<div>
+		<%= f.password_field :password_confirmation,placeholder: '请输入你的密码...' %>
+	</div>
+	<div>
+		<%= f.submit "管理员更改",class: 'buttonStyle1' %>
+	</div>	
+<% end %>

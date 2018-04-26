@@ -7,7 +7,7 @@
 			<%= image_tag('pic.jpeg') %>
 		</div>
 		<div class="authorData">
-			<h2><strong><%= Administrator.first.name %></strong> <span>Web前端开发者<a href="#" class="introduceChange"><span class="fa fa-gg fa-fw"></span></a></span></h2>
+			<h2><strong><%= current_admin.name %></strong> <span>Web前端开发者 <a class="introduceChange"><span class="fa fa-edit fa-fw"></span></a></span></h2>
 			<p>世界那么大,总归得撒开步子到处去望望,看看那妖娆迷人的世界。</p>
 		</div>
 	</div>
@@ -40,3 +40,4 @@
 		</div>
 	</div>
 </div>
+<%= render 'generalPurpose/about_edit' %>

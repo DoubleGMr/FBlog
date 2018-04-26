@@ -1,0 +1,12 @@
+<% if @admin.errors.any? %>
+	<div class="error-box">
+		<h3>
+			填写信息包含 <%= @admin.errors.count %> 错误.
+		</h3>
+		<ul>
+			<% @admin.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li> <% end %>
+		</ul>
+		<span class="close"><span class="fa fa-close fa-fw"></span></span>
+	</div>
+<% end %>

@@ -17,18 +17,21 @@ Rails.application.routes.draw do
   resources :posts, only: [:index,:show]
   resources :comments, only: [:create]
   resources :messages, only: [:create]
+
   match 'posts_vote', to: 'static_pages#posts_vote', via: :get
 
   namespace :admin do
     resources :dashboards ,only: :index
-    resources :administrators,only: [:index,:edit,:update,:new,:create]
+    resources :administrators,only: [:edit,:update]
     resources :users,only: [:index,:show,:update,:destroy]
     resources :posts,except: [:new,:edit]
     resources :tags, only: [:create,:destroy]
     resources :comments, only: [:index,:destroy]
     resources :messages, only: [:index,:destroy]
+    resources :abouts, only: [:index,:create,:update]
 
-     match 'all_users_delete', to: 'admin/users#delete_all', via: :delete
+     match 'all_users_delete', to: 'users#delete_all', via: :delete
+     match 'all_messages_delete', to: 'messages#delete_all', via: :delete
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
