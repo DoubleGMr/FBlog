@@ -1,0 +1,51 @@
+<div class="container flex">
+	<div class="left-list">
+		<div class="tags flex">
+			<ul class="flex">
+				<li>
+					<h3>
+						<span class="fa fa-envelope-open-o fa-fw"></span>
+						<span class="pls">Messages' All Data</span>
+					</h3>
+				</li>
+				<div class="flex">
+					<%= link_to admin_all_users_delete_path	,class: 'button buttonStyle1',data:{confirm:"确定要删除所有注册用户吗?"} do %>
+						<span class="fa fa-trash fa-fw"></span>Delete
+					<% end %>
+				</div>
+			</ul>
+		</div>
+		<div class="post-list">
+			<ul>
+				<% @messages.each do |message| %>
+				<li>
+					<div class="post-data">
+						<div class="pd">
+							<h3 class="flex pl">
+								<a href="#">Create at: <%= time_now(message.created_at) %></a>
+								<span>
+									<% if message.message_type != ''  %>
+										<a class="buttonStyle1 button" style="display: flex;font-size: 1rem;align-items: center;"><%= message.message_type %></a>
+									<% end %>
+									<%= link_to admin_message_path(message),class: 'buttonStyle2 button',method: :delete,data:{confirm: "确认要删除来自#{message.name}的信件吗?"} do %>
+										<span class="fa fa-trash fa-fw"></span>
+									<% end %>
+								</span>
+							</h3>
+						</div>
+						<div class="img flex">
+							<%= image_tag('pic.jpeg') %>
+							<span><strong>Name:</strong> <%= message.name %></span>
+							<span><strong>Email:</strong> <%= message.email %></span>
+						</div>
+						<div class="cc">
+							<p><%= message.content %></p>
+						</div>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<%= render 'generalPurpose/right_admin' %>
+</div>

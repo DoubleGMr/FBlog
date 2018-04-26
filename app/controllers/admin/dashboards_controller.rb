@@ -5,7 +5,8 @@ class Admin::DashboardsController < Admin::ApplicationController
   	@posts = Post.all
   	@tag = Tag.new
   	@comments = Comment.all
-  	@post_views = View.all.count
-  	@visits = Visit.all.count
+  	@post_views = View.count
+  	@visits = Visit.count
+  	@messages = Message.count
   end
 end

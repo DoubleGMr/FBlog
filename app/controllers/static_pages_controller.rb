@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
  	 end
   	@tags = Tag.all
   	@comment = Comment.new
+    @message = Message.new
     ip = request.remote_ip
     if !Visit.find_by(ip: ip)
       Visit.create!(ip: ip)
@@ -15,6 +16,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @message = Message.new
   end
 
   def posts_vote

@@ -1,23 +1,32 @@
 <div class="message-box flex flex-center">
 	<div>
 		<h2>欢迎来信</h2>
-		<form action="#">
+		<%= form_for(@message,url: messages_path) do |f| %>
+			<% if logged_in? %>
+				<div>
+					<%= f.text_field :name, value: "#{current_user.name}" %>
+				</div>
+				<div>
+					<%= f.email_field :email, value: "#{current_user.email}" %>
+				</div>
+			<% else %>
+				<div>
+					<%= f.text_field :name, placeholder: 'Your name...' %>
+				</div>
+				<div>
+					<%= f.email_field :email, placeholder: 'Your email...' %>
+				</div>
+			<% end %>
 			<div>
-				<input type="text" placeholder="Your name...">
+				<%= f.text_field :message_type, placeholder: 'MessageType, eg: 问题 or 其他...(最多8个字)' %>
 			</div>
 			<div>
-				<input type="eamil" placeholder="Your email...">
+				<%= f.text_area :content %>
 			</div>
 			<div>
-				<input type="text" placeholder="Message topic, eg: 问题 or 其他...">
+				<%= f.submit "信件送抵",class: 'buttonStyle1' %>
 			</div>
-			<div>
-				<textarea></textarea>
-			</div>
-			<div>
-				<input type="submit" value="信件送抵" class="buttonStyle1">
-			</div>
-		</form>
+		<% end %>
 	</div>
 	<p class="close"><span class="fa fa-close fa-fw"></span></p>
 </div>

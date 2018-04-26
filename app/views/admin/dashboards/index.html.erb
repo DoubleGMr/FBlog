@@ -211,6 +211,7 @@
 <input type="hidden" id="views" value="<%= @post_views %>">
 <input type="hidden" id="comments" value="<%= @comments.count %>">
 <input type="hidden" id="visits" value="<%= @visits %>">
+<input type="hidden" id="messages" value="<%= @messages %>">
 
 
 <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.min.js"></script>
@@ -222,6 +223,7 @@
 		let views = $('#views').val();
 		let comments = $('#comments').val();
 		let visits = $('#visits').val();
+		let messages = $('#messages').val();
 		let option = {
 		    tooltip : {
 		        trigger: 'item',
@@ -245,7 +247,7 @@
 		            center: ['30%', '55%'],
 		            data:[
 		                {value:visits, name:'游客访问量'},
-		                {value:3, name:'信件接受量'},
+		                {value:messages, name:'信件接受量'},
 		                {value:users, name:'用户注册量'},
 		                {value:posts, name:'贴文创建量'},
 		                {value:views, name:'贴文阅读量'},
