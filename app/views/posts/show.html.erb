@@ -54,7 +54,7 @@
 									<% @post.comments.each do |comment| %>
 										<li>
 											<div class="img flex">
-												<%= image_tag('pic.jpeg') %>
+												<%= image_tag('pic.jpg') %>
 												<span>User: <%= comment.user.name %></span>
 												<span>date: <%= time_now(comment.created_at) %></span>
 											</div>

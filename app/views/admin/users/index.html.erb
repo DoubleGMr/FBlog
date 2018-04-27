@@ -33,7 +33,7 @@
 								<% end %>
 								<span>
 									<%= link_to admin_user_path(user),class: 'buttonStyle3 button' do %>
-												<span class="fa fa-eye fa-fw">
+										<span class="fa fa-eye fa-fw">
 									<% end %>
 									<%= link_to admin_user_path(user),class: 'buttonStyle3 button',method: :delete,data:{confirm: "确认删除#{user.name}吗？"} do %>
 										<span class="fa fa-trash fa-fw">
@@ -42,7 +42,7 @@
 							</h3>
 						</div>
 						<div class="img flex">
-							<%= image_tag('pic.jpeg',class: "middleImg") %>
+							<%= image_tag('pic.jpg',class: "middleImg") %>
 							<div>
 								<span><strong>Name:</strong> <%= user.name %></span>
 								<span><strong>Email:</strong> <%= user.email %></span>

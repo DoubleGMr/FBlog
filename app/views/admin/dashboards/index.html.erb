@@ -10,8 +10,6 @@
 			</ul>
 			<div class="sort flex">
 				<ul class="flex sort">
-					<!-- <li><a href="#"><span class="fa fa-exchange fa-fw"></span>热门排序</a></li> | 
-					<li><a href="#">时间排序</a></li> -->
 					<li><%= link_to '数据刷新',admin_dashboards_path,class: 'button buttonStyle1' %></li>
 				</ul>
 			</div>
@@ -82,7 +80,7 @@
 								</h3>
 							</div>
 							<div class="img flex">
-								<%= image_tag('pic.jpeg') %>
+								<%= image_tag('pic.jpg') %>
 								<span>author: <%= post.administrator.name %></span>
 								<span>Created_at: <%= time_now(post.created_at) %></span>
 							</div>
@@ -103,7 +101,7 @@
 										<% post.comments.each do |comment| %>
 										<li>
 											<div class="img flex">
-												<%= image_tag('pic.jpeg') %>
+												<%= image_tag('pic.jpg') %>
 												<span>User: <%= comment.user.name %></span>
 												<span>date: <%= time_now(comment.created_at) %></span>
 											</div>
@@ -148,7 +146,7 @@
 									</h3>
 								</div>
 								<div class="img flex">
-									<%= image_tag('pic.jpeg',class: "middleImg") %>
+									<%= image_tag('pic.jpg',class: "middleImg") %>
 									<div>
 										<span><strong>Name:</strong> <%= user.name %></span>
 										<span><strong>Email:</strong> <%= user.email %></span>
