@@ -830,6 +830,24 @@ header .session-box a{
 	outline: none;
 	color: #777;
 }
+.topControl{
+	display: none;
+	position: fixed;
+	right: 5px;
+	bottom: 100px;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0,0,0,.3);
+}
+.topControl span{
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.1rem;
+}
 
 /* animate */
 @-webkit-keyframes out{

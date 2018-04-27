@@ -1,11 +1,13 @@
 $(document).on("turbolinks:load",function(){
 	let weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
-	if($('.right-other').length>0){
-		scrollAnimate();
-		$(window).scroll(function(){
+	scrollAnimate();
+	topControl();
+	$(window).scroll(function(){
+		if($('.right-other').length>0){
 			scrollAnimate();
-		});
-	}
+		}
+		topControl();
+	});
 	if($('.leftWord').length>0){
 		let date = new Date();
 		let str = '';
@@ -73,6 +75,9 @@ $(document).on("turbolinks:load",function(){
 	$('.in_use').click(function(){
 		alert('该标签仍在使用中,不可删除.');
 	});
+	$('.topControl').click(function(){
+		$('document,html').animate({scrollTop:0},300);
+	});
 
 });
 function scrollAnimate(){
@@ -87,5 +92,12 @@ function scrollAnimate(){
 function actionBox(actionTarget){
 	if(actionTarget.length > 0){
 		actionTarget.css('display','flex');
+	}
+}
+function topControl(){
+	if($(window).scrollTop()>=50){
+			$('.topControl').fadeIn(200);
+	}else{
+		$('.topControl').fadeOut(200);
 	}
 }
