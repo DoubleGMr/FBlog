@@ -922,3 +922,11 @@ header .session-box a{
 		display: none;
 	}
 }
+@media screen and (max-width: 835px){
+	body{
+		position: relative;
+	}
+	header{
+		position: absolute;
+	}
+}
