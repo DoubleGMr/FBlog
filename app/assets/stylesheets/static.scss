@@ -37,6 +37,7 @@ html::-webkit-scrollbar-thumb {
     color:  var(--basicColor);
 }
 body{
+	min-width: var(--minWidth);
 	color: var(--basicColor);
 	font-size: 16px;
 	font-weight: 500;
