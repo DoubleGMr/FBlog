@@ -379,7 +379,7 @@ header .session-box a{
 	padding: 10px 5px;
 }
 .post-data .comment .comment-send input{
-	padding: 5px;
+	padding: 5px 10px;
 	border-radius: 2px;
 	font-size: 1rem;
 }
@@ -827,7 +827,9 @@ header .session-box a{
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 	        appearance: none;
-	background: url(down.png) no-repeat 97% 50%;
+	background-image: image_url('down.png');
+	background-repeat: no-repeat;
+	background-position: 98% 50%;
 	cursor: pointer;
 	outline: none;
 	color: #777;
