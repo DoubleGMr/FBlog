@@ -35,7 +35,7 @@
 							<div class="post-data">
 								<p class="tag">贴文标签: <% post.tags.each do |tag| %><%= tag.name %><% end %></p>
 								<div class="img flex">
-									<%= image_tag('pic.jpeg') %>
+									<%= image_tag('pic.jpg') %>
 									<span>author: <%= post.administrator.name %></span>
 									<span>created_at: <%= time_now(post.created_at) %></span>
 								</div>
@@ -64,7 +64,7 @@
 											<% post.comments.each do |comment| %>
 											<li>
 												<div class="img flex">
-													<%= image_tag('pic.jpeg') %>
+													<%= image_tag('pic.jpg') %>
 													<span>User: <%= comment.user.name %></span>
 													<span>date: <%= time_now(comment.created_at) %></span>
 												</div>
