@@ -13,6 +13,7 @@ module BlogLevel3
 
     config.time_zone = 'Beijing'
 	config.active_record.default_timezone = :local
+	config.assets.initialize_on_precompile = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
