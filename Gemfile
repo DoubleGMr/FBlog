@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'ckeditor'
+gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

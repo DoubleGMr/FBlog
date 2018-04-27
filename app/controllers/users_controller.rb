@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   # 确保是正确的用户 
   def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user 
+    @user = User.friendly.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 end

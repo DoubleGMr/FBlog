@@ -5,11 +5,11 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "该用户资料更新成功."
     else
@@ -19,7 +19,7 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.friendly.find(params[:id]).destroy
     flash[:success] = '用户删除成功.'
     if(params[:f_a])
       redirect_back(fallback_location: admin_dashboards_url)

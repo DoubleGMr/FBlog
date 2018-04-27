@@ -799,7 +799,7 @@ header .session-box a{
 	width: 800px;
 }
 .posts-box form>div{
-	padding: 10px 20px;
+	padding: 0px 20px;
 }
 .posts-box input[type="text"],.posts-box textarea,.posts-box select{
 	width: 100%;

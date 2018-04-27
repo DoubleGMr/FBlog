@@ -20,7 +20,7 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def update
-  	@post = Post.find(params[:id])
+  	@post = Post.friendly.find(params[:id])
   	if @post.update_attributes(post_params)
   		flash[:success] = "帖文内容更新成功."
   	else
@@ -30,12 +30,12 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def show
-  	@post = Post.find(params[:id])
+  	@post = Post.friendly.find(params[:id])
     @comment = Comment.new
   end
 
   def destroy
-  	Post.find(params[:id]).destroy
+  	Post.friendly.find(params[:id]).destroy
   	flash[:success] = "成功删除帖文."
   	if(params[:f_a])
       redirect_back(fallback_location: admin_dashboards_url)

@@ -12,6 +12,9 @@ class User < ApplicationRecord
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }
 
+	extend FriendlyId
+	friendly_id :name, use: :slugged
+
 	# 返回指定字符串的哈希摘要 
 	def self.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
