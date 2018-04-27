@@ -8,7 +8,6 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :is_publish, presence: true
 
   extend FriendlyId
   friendly_id :title, use: :slugged

@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
     	if @tag
     		@posts = Post.includes(:tags).where(is_publish: true, tags: {name: @tag}).order(id: :desc)
       elsif @search
-          @posts = Post.where("title LIKE ?","%#{@search}%").order(id: :desc)
+          @posts = Post.where(is_publish: true).where("title LIKE ?","%#{@search}%").order(id: :desc)
           if @posts.count == 0
             flash.now[:danger] = "没有类似的贴文."
           end
@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
       if @tag
         @posts = Post.includes(:tags).where(is_publish: true, tags: {name: @tag}).order(id: :"#{@order}")
       elsif @search
-        @posts = Post.where("title LIKE ?","%#{@search}%").order(id: :"#{@order}")
+        @posts = Post.where(is_publish: true).where("title LIKE ?","%#{@search}%").order(id: :"#{@order}")
         if @posts.count == 0
             flash.now[:danger] = "没有类似的贴文."
         end    

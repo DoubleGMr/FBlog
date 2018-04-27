@@ -44,6 +44,14 @@ class Admin::PostsController < Admin::ApplicationController
     end
   end
 
+  def change_status
+    @status = params[:status] == 'false' ? 'true' : 'false'
+    @post = Post.friendly.find(params[:id])
+    @post.update(is_publish: "#{@status}")
+    flash[:success] = "#{@post.title} 状态改变成功."
+    redirect_back(fallback_location: admin_posts_url)
+  end
+
   private
 
   	def post_params

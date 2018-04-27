@@ -34,9 +34,14 @@
 											<%= tag.name %>
 										<% end %>
 									</strong>
+									<% if !post.is_publish %>
+										<a class="buttonStyle3 button no-publish">未发表</a>
+									<% end %>
 									<span class="flex">
 										<span>
-											<a href="#" class="button"><span class="fa fa-chain fa-fw"></span></a>
+											<%= link_to admin_change_post_status_path(status: post.is_publish,id: post.id),class: 'button' do %>
+												<span class="fa fa-chain fa-fw">
+											<% end %>
 											<%= link_to admin_post_path(post),class: 'button' do %>
 												<span class="fa fa-edit fa-fw"></span>
 											<% end %>
