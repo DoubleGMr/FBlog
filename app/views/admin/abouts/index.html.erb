@@ -19,17 +19,17 @@
 			</div>
 			<div>
 				<h3>作者技术知识介绍<span>(Knowledge introduction)</span></h3>
-				<%= @about.try(:knowledge) %>
+				<%= sanitize(@about.try(:knowledge)) %>
 			</div>
 		</div>
 		<div class="authorBasicData">
 			<div>
 				<h3>作者职业经历<span>(work experience)</span></h3>
-				<%= @about.try(:exception) %>
+				<%= sanitize(@about.try(:exception)) %>
 			</div>
 			<div class="contact">
 				<h3>作者联系方式<span>(Contact information)</span></h3>
-				<%= @about.try(:contact) %>
+				<%= sanitize(@about.try(:contact)) %>
 			</div>
 		</div>
 		<div class="aboutWeb">
