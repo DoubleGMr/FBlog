@@ -16,7 +16,7 @@ class PasswordResetsController < ApplicationController
 	      flash[:info] = "邮件已发送至对应邮箱,请查收."
 	      redirect_to root_url
 		else
-	      flash.now[:danger] = "邮箱账号未注册,请检查是否正确."
+	      flash[:danger] = "邮箱账号未注册,请检查是否正确."
 		  render 'new' 
 		end
   	end	
