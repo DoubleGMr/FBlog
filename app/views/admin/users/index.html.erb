@@ -33,7 +33,7 @@
 								<% end %>
 								<span>
 									<% if user.try(:activated) %>
-										<%= link_to admin_change_user_admin_path(id: user.id,admin_status: user.admin),class: 'buttonStyle3 button'  do %>
+										<%= link_to admin_change_user_admin_path(id: user.id,admin_status: user.try(:admin)),class: 'buttonStyle3 button'  do %>
 											<span class="fa fa-link fa-fw"></span>
 										<% end %>
 									<% else %>

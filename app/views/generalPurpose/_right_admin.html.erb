@@ -18,21 +18,11 @@
 			</div>
 		</div>
 		<div class="recommend">
-			<h3>The Most Active Users</h3>
+			<h3>Admin's Knowledge Tree</h3>
 			<ul class="flex">
-				<li><a href="#">Jetty</a></li>
-				<li><a href="#">James</a></li>
-				<li><a href="#">Double</a></li>
-				<li><a href="#">Ruby</a></li>
-				<li><a href="#">Jack</a></li>
-				<li><a href="#">Luna</a></li>
-				<li><a href="#">Jimmy</a></li>
-				<li><a href="#">Kiki</a></li>
-				<li><a href="#">Cici</a></li>
-				<li><a href="#">Angel</a></li>
-				<li><a href="#">Dili</a></li>
-				<li><a href="#">Maray</a></li>
-				<li><a href="#">Justibity</a></li>
+				<% Tag.all.each do |tag| %>
+					<li><a><%= tag.name %></a></li>
+				<% end %>
 			</ul>
 		</div>
 		<div class="footer">
