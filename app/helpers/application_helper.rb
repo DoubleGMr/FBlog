@@ -11,4 +11,12 @@ module ApplicationHelper
 		end
 		return str
 	end
+
+	def image_show user
+		if user.try(:admin)
+			"pic.jpg"
+		else
+			"user.jpg"
+		end
+	end
 end

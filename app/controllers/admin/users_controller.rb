@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::ApplicationController
 
   def index
-  	@users = User.all
+  	@users = User.all.order(id: :asc)
   end
 
   def show
@@ -31,6 +31,19 @@ class Admin::UsersController < Admin::ApplicationController
   def delete_all
     User.delete_all
     flash[:success] = "成功删除所有用户."
+    redirect_back(fallback_location: admin_dashboards_url)
+  end
+
+
+  def change_user
+    @admin_status = params[:admin_status] == 'false' ? 'true' : 'false'
+    @user = User.friendly.find(params[:id])
+    if @admin_status == 'true'
+      flash[:success] = "成功将#{@user.name}设为代管理员."
+    else
+      flash[:danger] = "成功取消#{@user.name}代管理员身份."
+    end
+    @user.update(admin: "#{@admin_status}")
     redirect_back(fallback_location: admin_dashboards_url)
   end
 

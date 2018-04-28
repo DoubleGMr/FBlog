@@ -33,6 +33,7 @@ Rails.application.routes.draw do
      match 'all_users_delete', to: 'users#delete_all', via: :delete
      match 'all_messages_delete', to: 'messages#delete_all', via: :delete
      match 'change_post_status', to: 'posts#change_status',via: :get
+     match 'change_user_admin', to: 'users#change_user', via: :get
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

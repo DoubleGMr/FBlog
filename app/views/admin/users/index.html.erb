@@ -32,6 +32,13 @@
 									Create at: <%= time_now(user.created_at) %>
 								<% end %>
 								<span>
+									<% if user.try(:activated) %>
+										<%= link_to admin_change_user_admin_path(id: user.id,admin_status: user.admin),class: 'buttonStyle3 button'  do %>
+											<span class="fa fa-link fa-fw"></span>
+										<% end %>
+									<% else %>
+										<a class="button buttonStyle3">未激活</a>
+									<% end %>
 									<%= link_to admin_user_path(user),class: 'buttonStyle3 button' do %>
 										<span class="fa fa-eye fa-fw">
 									<% end %>
@@ -42,7 +49,7 @@
 							</h3>
 						</div>
 						<div class="img flex">
-							<%= image_tag('pic.jpg',class: "middleImg") %>
+							<%= image_tag(image_show(user),class: "middleImg") %>
 							<div>
 								<span><strong>Name:</strong> <%= user.name %></span>
 								<span><strong>Email:</strong> <%= user.email %></span>

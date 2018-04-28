@@ -1,7 +1,11 @@
 <div class="right-other">
 		<div class="user flex flex-center">
 			<div class="img">
-				<%= image_tag('pic.jpg') %>
+				<% if logged_in? %>
+					<%= image_tag(image_show(current_user)) %>	
+				<% else %>
+					<%= image_tag('pic.jpg') %>
+				<% end %>
 			</div>
 			<p>
 				<% if logged_in? %>

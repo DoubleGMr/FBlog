@@ -146,7 +146,7 @@
 									</h3>
 								</div>
 								<div class="img flex">
-									<%= image_tag('pic.jpg',class: "middleImg") %>
+									<%= image_tag(image_show(user),class: "middleImg") %>
 									<div>
 										<span><strong>Name:</strong> <%= user.name %></span>
 										<span><strong>Email:</strong> <%= user.email %></span>
@@ -186,7 +186,7 @@
 									</h3>
 								</div>
 								<div class="img flex">
-									<%= image_tag('pic.jpg') %>
+									<%= image_tag(image_show(comment.user)) %>
 									<span><strong>Name:</strong> <%= comment.user.name %></span>
 									<span><strong>For:</strong> <%= comment.post.title %></span>
 								</div>

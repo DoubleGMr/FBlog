@@ -4,7 +4,7 @@
 		<div class="aboutBg">
 		</div>
 		<div class="authorImg">
-			<%= image_tag('pic.jpg') %>
+			<%= image_tag(image_show(current_user)) %>
 		</div>
 		<div class="authorData uData">
 			<h2><strong><%= current_user.name %></strong><span>Created at: <%= time_now(current_user.created_at) %><span class="fa fa-gg fa-fw"></span></span></h2>
