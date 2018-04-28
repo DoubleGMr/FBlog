@@ -1,13 +1,12 @@
-:root{
-	--basicBgColor:#fff;
-	--basicColor:#666;
-	--topicColor:#0084ff;
-	--smallImg:30px;
-	--middleImg: 55px;
-	--shadowColor:rgba(26,26,26,.15);
-	--minWidth:850px;
-	--maxWidth:1024px;
-}
+
+$basicBgColor:#fff;
+$basicColor:#666;
+$topicColor:#0084ff;
+$smallImg:30px;
+$middleImg: 55px;
+$shadowColor:rgba(26,26,26,.15);
+$minWidth:850px;
+$maxWidth:1024px;
 
 *{
 	margin: 0;
@@ -25,20 +24,20 @@ html::-webkit-scrollbar-thumb {
 	  border: 4px solid #fff;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:  var(--basicColor);
+    color:  $basicColor;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: var(--basicColor);
+    color: $basicColor;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: var(--basicColor);
+    color: $basicColor;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:  var(--basicColor);
+    color:  $basicColor;
 }
 body{
-	min-width: var(--minWidth);
-	color: var(--basicColor);
+	min-width: $minWidth;
+	color: $basicColor;
 	font-size: 16px;
 	font-weight: 500;
 	font-family: "黑体","Microsoft Yahei","圆体";
@@ -47,10 +46,10 @@ body{
 a{
 	cursor: pointer;
 	text-decoration: none;
-	color: var(--basicColor);
+	color: $basicColor;
 }
 a:hover{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 ul{
 	list-style: none;
@@ -74,8 +73,8 @@ img{
 }
 
 .container{
-	max-width: var(--maxWidth);
-	min-width: var(--minWidth);
+	max-width: $maxWidth;
+	min-width: $minWidth;
 	margin: 0 auto;
 	padding: 0 15px;
 }
@@ -92,22 +91,22 @@ img{
 	border-radius: 3px;
 }
 .buttonStyle1{
-	background-color: var(--topicColor);
-	border: 2px solid var(--topicColor);
-	color: var(--basicBgColor);
+	background-color: $topicColor;
+	border: 2px solid $topicColor;
+	color: $basicBgColor;
 }
 .buttonStyle1:hover{
-	background-color: var(--basicBgColor);
-	color: var(--topicColor);
+	background-color: $basicBgColor;
+	color: $topicColor;
 }
 .buttonStyle2{
-	background-color: var(--basicBgColor);
-	border: 2px solid var(--topicColor);
-	color: var(--topicColor);
+	background-color: $basicBgColor;
+	border: 2px solid $topicColor;
+	color: $topicColor;
 }
 .buttonStyle2:hover{
-	background-color: var(--topicColor);
-	color: var(--basicBgColor);
+	background-color: $topicColor;
+	color: $basicBgColor;
 }
 .buttonStyle3{
 	background-color: #eee;
@@ -115,8 +114,8 @@ img{
 	color: #777;
 }
 .buttonStyle3:hover{
-	color: var(--topicColor);
-	border: 2px solid var(--topicColor);
+	color: $topicColor;
+	border: 2px solid $topicColor;
 }
 .no-publish{
 	font-size: .9rem;
@@ -133,8 +132,8 @@ img{
 }
 .alert .container{
 	position: relative;
-	background-color: var(--basicBgColor);
-	box-shadow: 0 1px 3px var(--shadowColor);
+	background-color: $basicBgColor;
+	box-shadow: 0 1px 3px $shadowColor;
 	padding: 20px 30px;
 	border: 1px solid #eee;
 	border-radius: 3px;
@@ -147,19 +146,19 @@ img{
 	cursor: pointer;
 }
 .close:hover{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .color{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 
 header{
 	position: fixed;
 	z-index: 99;
 	width: 100%;
-	background-color: var(--basicBgColor);
+	background-color: $basicBgColor;
 	padding: 8px 0;
-	border-bottom: 3px solid var(--shadowColor);
+	border-bottom: 3px solid $shadowColor;
 }
 header>div>div.flex{
 	flex:2;
@@ -171,7 +170,7 @@ header .logo h1{
 	font-size: 1.8rem;
 }
 header .logo h1 a span{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 header nav ul{
 	height:100%;
@@ -198,7 +197,7 @@ header .search form input[type="submit"]{
 	width: 15%;
 	border: 0;
 	font-size: .9rem;
-	color: var(--basicColor);
+	color: $basicColor;
 }
 header .session-box{
 	justify-content: flex-end;
@@ -219,8 +218,8 @@ header .session-box a{
 }
 .left-list .tags{
 	padding: 25px 10px;
-	box-shadow: 0 1px 3px var(--shadowColor);
-	background-color: var(--basicBgColor);
+	box-shadow: 0 1px 3px $shadowColor;
+	background-color: $basicBgColor;
 	border-radius: 2px;
 	position: relative;
 }
@@ -229,9 +228,9 @@ header .session-box a{
 	position: absolute;
 	top: 100%;
 	left: 0;
-	background-color: var(--basicBgColor);
+	background-color: $basicBgColor;
 	width: 100%;
-	border-bottom: 3px solid var(--shadowColor);
+	border-bottom: 3px solid $shadowColor;
 }
 .left-list .tags .down-tags ul{
 	padding: 10px 10px 30px;
@@ -255,7 +254,7 @@ header .session-box a{
 	padding: 1px 10px;
 }
 .left-list .tags ul li a.more{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .left-list .tags div.sort{
 	justify-content: flex-end;
@@ -263,8 +262,8 @@ header .session-box a{
 	font-size: .9rem;
 }
 .left-list .post-list>ul>li,.total-data>div>ul>li,.total-data>div>div>ul>li,.aboutContent .post-list>ul>li{
-	box-shadow: 0 1px 3px var(--shadowColor);
-	background-color: var(--basicBgColor);
+	box-shadow: 0 1px 3px $shadowColor;
+	background-color: $basicBgColor;
 	border-radius: 2px;
 	padding: 25px 20px;
 	display: block;
@@ -276,17 +275,17 @@ header .session-box a{
 	padding-left: 20px;
 }
 .left-list .post-list .post-data .img img,.total-data .post-data .img img{
-	width: var(--smallImg);
-	height: var(--smallImg);
+	width: $smallImg;
+	height: $smallImg;
 }
 .left-list .post-list .post-data .img img.middleImg,.total-data .post-data .img img.middleImg{
-	width: var(--middleImg);
-	height: var(--middleImg);
+	width: $middleImg;
+	height: $middleImg;
 }
 .left-list .post-list .post-data .img span,.total-data .post-data .img span{
 	display: block;
 	padding: 0 8px 0 10px;
-	line-height: var(--smallImg);
+	line-height: $smallImg;
 }
 .left-list .post-list .post-data .img>div{
 	padding: 0 15px;
@@ -294,7 +293,7 @@ header .session-box a{
 .post-data .tag{
 	align-items: center;
 	text-transform: uppercase;
-	border-left: 10px solid var(--topicColor);
+	border-left: 10px solid $topicColor;
 	padding-left: 10px;
 }
 .post-data p.tag{
@@ -308,18 +307,18 @@ header .session-box a{
 }
 .post-data .tag>span>span{
 	display: inline-block;
-	border: 2px solid var(--topicColor);
+	border: 2px solid $topicColor;
 	padding: 0 3px;
 	border-radius: 2px;
 	margin-left: 5px;
 	font-size: 1rem;
 }
 .post-data .tag span{
-	color: var(--topicColor);
+	color: $topicColor;
 	cursor: pointer;
 }
 .post-data .tag span a span{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .post-data .tag span a.button{
 	padding: 1px 5px;
@@ -335,7 +334,7 @@ header .session-box a{
 	border:0;
 }
 .post-data .pd h3 strong{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .post-data .post-control{
 	margin: 15px 0;
@@ -349,20 +348,20 @@ header .session-box a{
 	margin-right: 3px;
 }
 .post-data .post-control ul>li.vote a.active{
-	color: var(--basicBgColor);
-	border-color: var(--topicColor);
-	background-color: var(--topicColor);
+	color: $basicBgColor;
+	border-color: $topicColor;
+	background-color: $topicColor;
 }
 .post-data .comment{
 	display: none;
 	margin: 0 20px;
 	padding: 5px 10px;
-	border: 1px solid var(--shadowColor);
+	border: 1px solid $shadowColor;
 	border-radius: 3px;
 }
 .post-data .comment h3{
 	padding: 10px 0;
-	border-bottom: 1px solid var(--shadowColor);
+	border-bottom: 1px solid $shadowColor;
 }
 .post-data .comment h3 p{
 	flex:1;
@@ -374,7 +373,7 @@ header .session-box a{
 }
 .post-data .comment ul li{
 	padding: 10px 0;
-	border-bottom: 1px solid var(--shadowColor);
+	border-bottom: 1px solid $shadowColor;
 }
 .post-data .comment ul li p{
 	padding: 5px 20px;
@@ -390,7 +389,7 @@ header .session-box a{
 .post-data .comment .comment-send input[type="text"]{
 	width: 84%;
 	border: 1px solid #ddd;
-	color: var(--basicColor);
+	color: $basicColor;
 }
 .post-data .comment .comment-send input[type="submit"]{
 	width: 15%;
@@ -408,18 +407,18 @@ header .session-box a{
 	max-width: 280px;
 }
 .content .right-other .user{
-	background-color: var(--basicBgColor);
+	background-color: $basicBgColor;
 	padding: 25px 10px;
 	flex-direction: column;
 	border-radius: 2px;
-	box-shadow: 0 1px 3px var(--shadowColor);
+	box-shadow: 0 1px 3px $shadowColor;
 }
 .content .right-other .user .img{
 	width: 110px;
 	height: 110px;
 	overflow: hidden;
 	border-radius: 50%;
-	border: 3px solid var(--shadowColor);
+	border: 3px solid $shadowColor;
 }
 .content .right-other .user>p{
 	padding: 5px 0;
@@ -433,14 +432,14 @@ header .session-box a{
 }
 .content .right-other .user .user-data>ul>li a{
 	font-size: 1.7rem;
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .content .right-other .recommend{
 	margin: 8px 0;
 	padding: 20px 10px;
 	border-radius: 2px;
-	background-color: var(--basicBgColor);
-	box-shadow: 0 1px 3px var(--shadowColor);
+	background-color: $basicBgColor;
+	box-shadow: 0 1px 3px $shadowColor;
 }
 .content .right-other .recommend h3{
 	text-align: center;
@@ -456,7 +455,7 @@ header .session-box a{
 .content .right-other .recommend ul li>a{
 	display: block;
 	padding: 3px 10px;
-	color: var(--topicColor);
+	color: $topicColor;
 	border-radius: 8px;
 	font-size: .9rem;
 	font-weight: bolder;
@@ -476,7 +475,7 @@ header .session-box a{
 	display: none;
 	position: fixed;
 	width: 100%;
-	min-width: var(--minWidth);
+	min-width: $minWidth;
 	height: 100vh;
 	background-color: rgba(0,0,0,.3);
 	top: 0;
@@ -492,10 +491,10 @@ header .session-box a{
 }
 .message-box>div,.tags-box>div,.userChange-box>div,.introduce-box>div,.posts-box>div{
 	width: 600px;
-	background-color: var(--basicBgColor);
+	background-color: $basicBgColor;
 	padding: 40px;
 	border-radius: 3px;
-	box-shadow: 0 1px 5px var(--shadowColor);
+	box-shadow: 0 1px 5px $shadowColor;
 }
 .message-box>div h2,.tags-box>div h2,.userChange-box div h2,.introduce-box div h2,.posts-box div h2{
 	text-align: center;
@@ -516,9 +515,9 @@ header .session-box a{
 
 .content .aboutTop{
 	border-radius: 3px;
-	box-shadow: 0 1px 3px var(--shadowColor);
+	box-shadow: 0 1px 3px $shadowColor;
 	position: relative;
-	background-color: var(--basicBgColor);
+	background-color: $basicBgColor;
 	height: 205px;
 	overflow: hidden;
 	margin-bottom: 7px;
@@ -554,7 +553,7 @@ header .session-box a{
 	padding-left: 10px;
 }
 .content .aboutTop .authorData h2>span span{
-	color: var(--topicColor);
+	color: $topicColor;
 	padding-left: 5px;
 	font-weight: 800;
 }
@@ -562,8 +561,8 @@ header .session-box a{
 	color: #999;
 }
 .content .aboutContent>div{
-	background-color: var(--basicBgColor);
-	box-shadow: 0 1px 3px var(--shadowColor);
+	background-color: $basicBgColor;
+	box-shadow: 0 1px 3px $shadowColor;
 	border-radius: 3px;
 	padding: 20px 0;
 	margin-bottom: 7px;
@@ -572,7 +571,7 @@ header .session-box a{
 	padding: 10px 55px;
 }
 .content .aboutContent>div>div>h3{
-	border-left: 20px solid var(--topicColor);
+	border-left: 20px solid $topicColor;
 	padding-left: 15px;
 }
 .content .aboutContent>div>div h3 span{
@@ -596,14 +595,14 @@ header .session-box a{
 .session{
 	width: 100%;
 	height: 100vh;
-	min-width: var(--minWidth);
+	min-width: $minWidth;
 }
 .session>div{
 	flex:1;
 	height: 100%;
 }
 .session>div.leftWord{
-	background-color: var(--topicColor);
+	background-color: $topicColor;
 	flex-direction: column;
 }
 .session>div.leftWord h1 a,.leftWord h2{
@@ -617,8 +616,8 @@ header .session-box a{
 	height: 100%;
 	flex-direction: column;
 	padding: 70px;
-	background-color: var(--basicBgColor);
-	box-shadow: 0 1px 3px var(--shadowColor);
+	background-color: $basicBgColor;
+	box-shadow: 0 1px 3px $shadowColor;
 	border-radius: 5px;
 }
 .rightSession>div form{
@@ -630,7 +629,7 @@ header .session-box a{
 	font-size: 3.5rem;
 }
 .rightSession>div h1 span{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .rightSession>div div{
 	padding: 10px 0;
@@ -640,7 +639,7 @@ header .session-box a{
 	text-align: center;
 }
 .rightSession>div div p a{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .rightSession>div div input[type="text"],.rightSession>div div input[type="password"],.rightSession>div div input[type="submit"],.rightSession>div div input[type="email"]{
 	width: 100%;
@@ -656,14 +655,14 @@ header .session-box a{
 }
 
 .total-data>div{
-	box-shadow: 0 1px 3px var(--shadowColor);
-	background-color: var(--basicBgColor);
+	box-shadow: 0 1px 3px $shadowColor;
+	background-color: $basicBgColor;
 	border-radius: 2px;
 	padding: 25px 20px;
 	margin: 8px 0;
 }
 .total-data>div>h3{
-	border-left: 10px solid var(--topicColor);
+	border-left: 10px solid $topicColor;
 	padding-left: 15px;
 	font-size: 1rem;
 	text-transform: uppercase;
@@ -718,7 +717,7 @@ header .session-box a{
 	display: flex;
 }
 .post-data .img  span strong{
-	color: var(--topicColor);
+	color: $topicColor;
 }
 .total-data>div>ul>li,.total-data>div>div>ul>li{
 	box-shadow: none;
@@ -736,7 +735,7 @@ header .session-box a{
 	display: inline-block;
 	width:10px;
 	height: 10px;
-	background-color: var(--topicColor);
+	background-color: $topicColor;
 	margin-right: 5px;
 }
 .tags ul>li>h3{
@@ -772,7 +771,7 @@ header .session-box a{
 	padding: 8px 21px;
 }
 .aboutContent .post-list .pl>a{
-	color: var(--topicColor);
+	color: $topicColor;
 	text-transform: uppercase;
 	font-size: 1.4rem;
 }
@@ -784,8 +783,8 @@ header .session-box a{
 	padding:30px 50px;
 	border-radius: 3px;
 	border: 1px solid #eee;
-	background-color: var(--basicBgColor);
-	box-shadow: 0 1px 3px var(--shadowColor);
+	background-color: $basicBgColor;
+	box-shadow: 0 1px 3px $shadowColor;
 	-webkit-animation: out .5s linear;
 	        animation: out .5s linear;
 }
@@ -795,7 +794,7 @@ header .session-box a{
 	top: 36px;
 }
 .rightSession>div div.error-box h3{
-	color: var(--topicColor);
+	color: $topicColor;
 	padding: 5px 0;
 }
 .rightSession>div div.field_with_errors{
