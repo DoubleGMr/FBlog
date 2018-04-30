@@ -2,11 +2,11 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "http://localhost:3000" } #网站网址，以后改
+  config.action_mailer.default_url_options = { host: "120.79.241.69" } #网站网址，以后改
   config.action_mailer.smtp_settings = {
     :address => "smtp.163.com",
     :port => "587",
-    :domain => "163.com",
+    :domain => "jetty.163.com",
     :authentication => :plain,
     :user_name => "y13422496263@gmail.com",
     :password => "y202302.",
