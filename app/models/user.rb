@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-	has_many :comments, dependent: :destroy
 	attr_accessor :remember_token, :activation_token, :reset_token
 	before_save :downcase_email
 	before_create :create_activation_digest
@@ -11,11 +10,13 @@ class User < ApplicationRecord
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 },allow_nil: true
 
+	has_many :comments, dependent: :destroy
+
 	extend FriendlyId
 	friendly_id :name, use: :slugged
 
 	# 返回指定字符串的哈希摘要 
-	def User.digest(string)
+	def self.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost
 		BCrypt::Password.create(string, cost: cost)

@@ -29,8 +29,6 @@ class UsersController < ApplicationController
   	params.require(:user).permit(:name,:email,:password,:password_confirmation)
   end
 
-  
-
   # 确保是正确的用户 
   def correct_user
     @user = User.friendly.find(params[:id])

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   match 'posts_vote', to: 'static_pages#posts_vote', via: :get
 
   namespace :admin do
-    resources :dashboards ,only: :index
+    resources :dashboards ,only: [:index]
     resources :administrators,only: [:edit,:update]
     resources :users,only: [:index,:show,:update,:destroy]
     resources :posts,except: [:new,:edit]
