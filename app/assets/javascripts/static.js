@@ -1,5 +1,5 @@
 $(document).on("turbolinks:load",function(){
-	let weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
+	var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
 	scrollAnimate();
 	topControl();
 	$(window).scroll(function(){
