@@ -1,9 +1,12 @@
 $(document).on("turbolinks:load",function(){
 	var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
-	scrollAnimate();
+	var stop = false;
+	if($('.right-other').length>0){
+			scrollAnimate();
+		}
 	topControl();
 	$(window).scroll(function(){
-		if($('.right-other').length>0){
+		if($('.right-other').length>0 && stop == false){
 			scrollAnimate();
 		}
 		topControl();
@@ -76,7 +79,9 @@ $(document).on("turbolinks:load",function(){
 		alert('该标签仍在使用中,不可删除.');
 	});
 	$('.topControl').click(function(){
-		$('document,html').animate({scrollTop:0},300);
+		stop = true;
+		$('document,html,body').animate({scrollTop:0},300);
+		$('.right-other').animate({marginTop: 0},300,function(){stop = false;});
 	});
 
 });
@@ -88,16 +93,16 @@ function scrollAnimate(){
 	}else{
 		ro.css('marginTop',0);
 	}
-}
+};
 function actionBox(actionTarget){
 	if(actionTarget.length > 0){
 		actionTarget.css('display','flex');
 	}
-}
+};
 function topControl(){
-	if($(window).scrollTop()>=50){
-			$('.topControl').fadeIn(200);
+	if($(document).scrollTop()>=50){
+		$('.topControl').fadeIn(200);
 	}else{
 		$('.topControl').fadeOut(200);
 	}
-}
+};

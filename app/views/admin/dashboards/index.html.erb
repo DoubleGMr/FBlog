@@ -23,8 +23,7 @@
 			<div class="total-chart">
 				<h3>Total Data with chart</h3>
 				<div class="flex">
-					<div class="chart" id="totalChart">	
-					</div>
+					<div class="chart" id="totalChart"></div>
 				</div>
 			</div>
 			<div class="total-tags">
@@ -204,69 +203,4 @@
 	<%= render 'generalPurpose/right_admin' %>
 </div>
 <%= render 'generalPurpose/dashboard' %>
-<input type="hidden" id="users" value="<%= @users.count %>">
-<input type="hidden" id="posts" value="<%= @posts.count %>">
-<input type="hidden" id="views" value="<%= @post_views %>">
-<input type="hidden" id="comments" value="<%= @comments.count %>">
-<input type="hidden" id="visits" value="<%= @visits %>">
-<input type="hidden" id="messages" value="<%= @messages %>">
-
-
-<script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.min.js"></script>
-<script>
-	$(document).on("turbolinks:load",function(){
-		let totalChart = echarts.init(document.getElementById('totalChart'));
-		let users = $('#users').val();
-		let posts = $('#posts').val();
-		let views = $('#views').val();
-		let comments = $('#comments').val();
-		let visits = $('#visits').val();
-		let messages = $('#messages').val();
-		let option = {
-		    tooltip : {
-		        trigger: 'item',
-		        formatter: "{a} <br/>{b} : {c} ({d}%)"
-		    },
-		    legend: {
-		        orient: 'vertical',
-		        left: '70%',
-		        top: 'middle',
-		        data: ['游客访问量','信件接受量','用户注册量','贴文创建量','贴文阅读量','用户评论量'],
-		        textStyle: {
-		        	fontSize: 16,
-		        	color: '#666',
-		        }
-		    },
-		    series : [
-		        {
-		            name: '具体数据',
-		            type: 'pie',
-		            radius : '55%',
-		            center: ['30%', '55%'],
-		            data:[
-		                {value:visits, name:'游客访问量'},
-		                {value:messages, name:'信件接受量'},
-		                {value:users, name:'用户注册量'},
-		                {value:posts, name:'贴文创建量'},
-		                {value:views, name:'贴文阅读量'},
-		                {value:comments, name:'用户评论量'},
-		            ],
-		            label: {
-			            textStyle: {
-			            	fontSize: 14,
-			            	color: '#777',
-			            }
-		            },
-		            itemStyle: {
-		            	normal: {
-		            		color:'#0084ff',
-		            		shadowBlur: 10,
-		            		shadowColor: 'rgba(0, 0, 0, 0.5)'
-		            	},
-		            }
-		        }
-		    ]
-		};
-		totalChart.setOption(option);
-	});
-</script>
+<%= render 'generalPurpose/canvas' %>
