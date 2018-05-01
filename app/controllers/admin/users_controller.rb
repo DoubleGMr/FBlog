@@ -29,9 +29,10 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def delete_all
+    Comment.delete_all
     User.delete_all
-    flash[:success] = "成功删除所有用户."
     redirect_back(fallback_location: admin_dashboards_url)
+    flash[:success] = "成功删除所有用户."
   end
 
 

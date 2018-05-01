@@ -2,6 +2,9 @@ class Admin::PostsController < Admin::ApplicationController
   def index
     if params[:search]
       @posts = Post.where("title LIKE ?","%#{params[:search]}%").order(id: :desc)
+      if @posts.count == 0
+        flash.now[:danger] = "查询不到类似文章."
+      end
     else
       @posts = Post.all.order(id: :desc)
     end

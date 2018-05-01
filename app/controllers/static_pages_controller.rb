@@ -47,12 +47,12 @@ class StaticPagesController < ApplicationController
     if !Vote.find_by(ip: ip,post_id: post_id)
       @vote = Vote.new(ip:ip,post_id:post_id)
       if @vote.save
-        flash.now[:success] = "感谢您的支持,站主会继续努力..."
+        flash[:success] = "感谢您的支持,站主会继续努力..."
       else
-        flash.now[:danger] = "很抱歉,貌似出现了一点错误..."
+        flash[:danger] = "很抱歉,貌似出现了一点错误..."
       end
     else
-      flash.now[:danger] = "感谢您的支持,您已进行过评价."
+      flash[:danger] = "感谢您的支持,您已进行过评价."
     end  
       redirect_back(fallback_location: root_url)
   end
