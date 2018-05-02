@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "120.79.241.69" } #网站网址，以后改
+  config.action_mailer.default_url_options = { host: "www.jrtime.club" } #网站网址，以后改
   config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
 
   # Code is not reloaded between requests.
