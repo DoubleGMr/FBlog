@@ -166,6 +166,10 @@ header>div>div.flex{
 header nav{
 	height: 100%;
 }
+header nav ul{
+	width: 100%;
+    height: 100%;
+}
 header>div>div.session-box{
 	flex: none;
 }
@@ -334,6 +338,7 @@ header .session-box a{
 	color: #aaa;
 }
 .post-data .pd{
+	width: 100%;
 	padding-left: 20px;
 }
 .post-data .pd h3{
