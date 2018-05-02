@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def time_now time
-		time.strftime("%A %d %B,%Y")
+		time.strftime("%A %B %d,%Y")
 	end
 
 	def count count

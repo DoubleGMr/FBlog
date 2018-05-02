@@ -163,6 +163,9 @@ header{
 header>div>div.flex{
 	flex:2;
 }
+header nav{
+	height: 100%;
+}
 header>div>div.session-box{
 	flex: none;
 }
@@ -343,6 +346,7 @@ header .session-box a{
 .post-data .pd p{
 	background-color: #f8f8f8;
 	padding: 15px;
+	width: 100%;
 }
 .post-data .post-control{
 	margin: 15px 0;
