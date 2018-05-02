@@ -36,7 +36,7 @@
 						<div class="post-control">
 							<ul class="flex">
 								<li class="vote">
-									<%= link_to posts_vote_path(post_id: post.id),class:'active' do %>
+									<%= link_to posts_vote_path(post_id: @post.id),class:'active' do %>
 										<span class="fa fa-star fa-fw"></span><%= count(@post.votes.count) %> 支持
 									<% end %>
 								</li>
