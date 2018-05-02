@@ -1,33 +1,35 @@
 <div class="right-other">
-	<div class="user flex flex-center">
-		<div class="img">
-			<%= image_tag('pic.jpg') %>
+	<div>
+		<div class="user flex flex-center">
+			<div class="img">
+				<%= image_tag('pic.jpg') %>
+			</div>
+			<p>
+				<%= link_to edit_admin_administrator_path(current_admin) do %>
+					<%= current_admin.name %> <span class="fa fa-edit fa-fw"></span>
+				<% end %>
+			</p>
+			<div class="user-data">
+				<ul class="flex">
+					<li>
+						<a href="#"><span class="fa fa-calendar-minus-o fa-fw"></span><span class="weekDate"></span></a>
+						<p>国历日期: <span class="clearDate"></span></p>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<p>
-			<%= link_to edit_admin_administrator_path(current_admin) do %>
-				<%= current_admin.name %> <span class="fa fa-edit fa-fw"></span>
-			<% end %>
-		</p>
-		<div class="user-data">
+		<div class="recommend">
+			<h3>Admin's Knowledge Tree</h3>
 			<ul class="flex">
-				<li>
-					<a href="#"><span class="fa fa-calendar-minus-o fa-fw"></span><span class="weekDate"></span></a>
-					<p>国历日期: <span class="clearDate"></span></p>
-				</li>
+				<% Tag.all.each do |tag| %>
+					<li><a><%= tag.name %></a></li>
+				<% end %>
 			</ul>
 		</div>
-	</div>
-	<div class="recommend">
-		<h3>Admin's Knowledge Tree</h3>
-		<ul class="flex">
-			<% Tag.all.each do |tag| %>
-				<li><a><%= tag.name %></a></li>
-			<% end %>
-		</ul>
-	</div>
-	<div class="footer">
-		<p>记住自己是谁,在想什么,在做什么</p>
-		<p>不要让今天的忧愁掩盖你明天的快乐</p>
-		<p>勇敢走下去,世界在等待着微笑的你</p>
+		<div class="footer">
+			<p>记住自己是谁,在想什么,在做什么</p>
+			<p>不要让今天的忧愁掩盖你明天的快乐</p>
+			<p>勇敢走下去,世界在等待着微笑的你</p>
+		</div>
 	</div>
 </div>

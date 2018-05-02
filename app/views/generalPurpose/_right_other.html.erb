@@ -1,53 +1,55 @@
 <div class="right-other">
-	<div class="user flex flex-center">
-		<div class="img">
-			<% if logged_in? %>
-				<%= image_tag(image_show(current_user)) %>	
-			<% else %>
-				<%= image_tag('pic.jpg') %>
-			<% end %>
+	<div>
+		<div class="user flex flex-center">
+			<div class="img">
+				<% if logged_in? %>
+					<%= image_tag(image_show(current_user)) %>	
+				<% else %>
+					<%= image_tag('pic.jpg') %>
+				<% end %>
+			</div>
+			<p>
+				<% if logged_in? %>
+					<%= link_to current_user do %>
+						<%= current_user.name %> <span class="fa fa-gg fa-fw"></span>
+					<% end %>
+				<% else %>
+					<%= link_to login_path do %>
+						登陆进行评论
+					<% end %>
+				<% end %>
+			</p>
+			<div class="user-data">
+				<ul class="flex">
+					<li>
+						<a href="#"><span class="fa fa-calendar-minus-o fa-fw"></span><span class="weekDate"></span></a>
+						<p>国历日期: <span class="clearDate"></span></p>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<p>
-			<% if logged_in? %>
-				<%= link_to current_user do %>
-					<%= current_user.name %> <span class="fa fa-gg fa-fw"></span>
-				<% end %>
-			<% else %>
-				<%= link_to login_path do %>
-					登陆进行评论
-				<% end %>
-			<% end %>
-		</p>
-		<div class="user-data">
+		<div class="recommend">
+			<h3>Recommend 学习推荐网址</h3>
 			<ul class="flex">
-				<li>
-					<a href="#"><span class="fa fa-calendar-minus-o fa-fw"></span><span class="weekDate"></span></a>
-					<p>国历日期: <span class="clearDate"></span></p>
-				</li>
+				<li><a href="http://www.w3school.com.cn">W3School</a></li>
+				<li><a href="https://www.imooc.com">Imooc</a></li>
+				<li><a href="http://www.runoob.com">Runoob</a></li>
+				<li><a href="https://ruby-china.org">RubyChina</a></li>
+				<li><a href="https://youtube.com">Youtube</a></li>
+				<li><a href="https://dribbble.com">Dribbble</a></li>
+				<li><a href="https://www.behance.net">Behance</a></li>
+				<li><a href="https://www.heroku.com">Heroku</a></li>
+				<li><a href="http://www.youku.com">Youku</a></li>
+				<li><a href="https://www.bilibili.com">Bilibili</a></li>
+				<li><a href="http://www.bootcdn.cn">BootCDN</a></li>
+				<li><a href="http://fontawesome.dashgame.com">FontAwesome</a></li>
+				<li><a href="https://github.com">GitHub</a></li>
 			</ul>
 		</div>
-	</div>
-	<div class="recommend">
-		<h3>Recommend 学习推荐网址</h3>
-		<ul class="flex">
-			<li><a href="http://www.w3school.com.cn">W3School</a></li>
-			<li><a href="https://www.imooc.com">Imooc</a></li>
-			<li><a href="http://www.runoob.com">Runoob</a></li>
-			<li><a href="https://ruby-china.org">RubyChina</a></li>
-			<li><a href="https://youtube.com">Youtube</a></li>
-			<li><a href="https://dribbble.com">Dribbble</a></li>
-			<li><a href="https://www.behance.net">Behance</a></li>
-			<li><a href="https://www.heroku.com">Heroku</a></li>
-			<li><a href="http://www.youku.com">Youku</a></li>
-			<li><a href="https://www.bilibili.com">Bilibili</a></li>
-			<li><a href="http://www.bootcdn.cn">BootCDN</a></li>
-			<li><a href="http://fontawesome.dashgame.com">FontAwesome</a></li>
-			<li><a href="https://github.com">GitHub</a></li>
-		</ul>
-	</div>
-	<div class="footer">
-		<p>本站归个人版权所属&copycopyright2018</p>
-		<p>如若发现违法信息, 请及时联系作者删除</p>
-		<p>若有其他疑问, 欢迎随时向作者咨询</p>
+		<div class="footer">
+			<p>本站归个人版权所属&copycopyright2018</p>
+			<p>如若发现违法信息, 请及时联系作者删除</p>
+			<p>若有其他疑问, 欢迎随时向作者咨询</p>
+		</div>
 	</div>
 </div>

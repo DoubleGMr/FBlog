@@ -1,19 +1,13 @@
 $(document).on("turbolinks:load",function(){
 	var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
 	var stop = false;
-	var bool1 = $('.right-other').height() >= $('.post-list').height() ? false : true;
-	var bool2 = $('.right-other').height() >= $('.total-data').height() ? false : true;
 	if($('.right-other').length>0){
-			if ( bool1 || bool2 ) {
-				scrollAnimate();
-			}
+			scrollAnimate();
 		}
 	topControl();
 	$(window).scroll(function(){
 		if($('.right-other').length>0 && stop == false){
-			if ( bool1 || bool2 ) {
-				scrollAnimate();
-			}
+			scrollAnimate();
 		}
 		topControl();
 	});
@@ -89,11 +83,15 @@ $(document).on("turbolinks:load",function(){
 		$('document,html,body').animate({scrollTop:0},300);
 		$('.right-other').animate({marginTop: 0},300,function(){stop = false;});
 	});
-
 });
 function scrollAnimate(){
 	var ro = $('.right-other');
 	var st = $(window).scrollTop();
+	if( ro.css('marginTop') ){
+		if($('.right-other>div').height() + st >= $('.left-list').height() ){
+			return;
+		}
+	}
 	if( st >= 0 ){
 		ro.css('marginTop',st);
 	}else{
