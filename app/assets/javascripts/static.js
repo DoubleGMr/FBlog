@@ -1,16 +1,17 @@
 $(document).on("turbolinks:load",function(){
 	var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
 	var stop = false;
-	var bool = $('.right-other').height() >= $('.post-list').height() ? false : true;
+	var bool1 = $('.right-other').height() >= $('.post-list').height() ? false : true;
+	var bool2 = $('.right-other').height() >= $('.total-data').height() ? false : true;
 	if($('.right-other').length>0){
-			if (bool) {
+			if ( bool1 || bool2 ) {
 				scrollAnimate();
 			}
 		}
 	topControl();
 	$(window).scroll(function(){
 		if($('.right-other').length>0 && stop == false){
-			if (bool) {
+			if ( bool1 || bool2 ) {
 				scrollAnimate();
 			}
 		}
