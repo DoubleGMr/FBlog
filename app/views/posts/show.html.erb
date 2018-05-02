@@ -36,12 +36,12 @@
 						<div class="post-control">
 							<ul class="flex">
 								<li class="vote">
-									<%= link_to posts_vote_path(post_id: @post.id),class:'active' do %>
-										<span class="fa fa-star fa-fw"></span><%= count(@post.votes.count) %>
+									<%= link_to posts_vote_path(post_id: post.id),class:'active' do %>
+										<span class="fa fa-star fa-fw"></span><%= count(post.votes.count) %> 支持
 									<% end %>
 								</li>
-								<li><a><span class="fa fa-eye fa-fw"></span><%= count(@post.views.count) %></a></li>
-								<li class="comments"><a><span class="fa fa-comment fa-fw"></span><%= @post.comments.count %>条评论</a></li>
+								<li><a><span class="fa fa-eye fa-fw"></span><%= count(post.views.count) %> 浏览</a></li>
+								<li class="comments"><a><span class="fa fa-comment fa-fw"></span><%= post.comments.count %> 评论</a></li></a></li>
 							</ul>
 						</div>
 						<div class="comment">
