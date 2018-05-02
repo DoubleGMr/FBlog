@@ -331,8 +331,8 @@ header .session-box a{
 	color: $topicColor;
 }
 .post-data .tag span a.button{
-	display: flex;
-	padding: 2px 5px;
+	padding: 3px 5px;
+	display: inline-block;
 }
 .post-data .tag span a span:hover{
 	color: #aaa;
