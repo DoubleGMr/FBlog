@@ -1,13 +1,18 @@
 $(document).on("turbolinks:load",function(){
 	var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satursday'];
 	var stop = false;
+	var bool = $('.right-other').height() >= $('.post-list').height() ? false : true;
 	if($('.right-other').length>0){
-			scrollAnimate();
+			if (bool) {
+				scrollAnimate();
+			}
 		}
 	topControl();
 	$(window).scroll(function(){
 		if($('.right-other').length>0 && stop == false){
-			scrollAnimate();
+			if (bool) {
+				scrollAnimate();
+			}
 		}
 		topControl();
 	});
