@@ -57,8 +57,7 @@ $(document).on("turbolinks:load",function(){
 		var c = $(e.target).parents('.post-data').children('.comment');
 		if(c.css('display')=='block' && $('.posts-box').css('display')=='flex'){
 			$('.posts-box').css('display','none');
-		}
-		if(c.css('display')=='block' && $('.posts-box').css('display')!='flex'){
+		}else if(c.css('display')=='block' && $('.posts-box').css('display')!='flex'){
 			c.slideToggle(300);
 		}
 		if($('.message-box').css('display')=='flex'){
