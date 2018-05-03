@@ -162,6 +162,7 @@ header{
 }
 header>div>div.flex{
 	flex:2;
+	align-items: center;
 }
 header nav{
 	height: 100%;
@@ -192,7 +193,7 @@ header .search form{
 	width: 300px;
 	height: 100%;
 	background-color: #eee;
-	padding: 0 10px;
+	padding:10px;
 	border-radius: 2px;
 }
 header .search form input[type="text"]{
@@ -931,6 +932,7 @@ header .session-box a{
 	.session>div.rightSession{
 		position: absolute;
 		width: 100%;
+		left: 0;
 	}
 	.session>div.rightSession>div{
 		height: auto;
