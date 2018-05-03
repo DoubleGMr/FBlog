@@ -57,21 +57,29 @@ $(document).on("turbolinks:load",function(){
 		var c = $(e.target).parents('.post-data').children('.comment');
 		if(c.css('display')=='block' && $('.posts-box').css('display')=='flex'){
 			$('.posts-box').css('display','none');
-		}else if(c.css('display')=='block' && $('.posts-box').css('display')!='flex'){
+		}
+		if(c.css('display')=='block' && $('.posts-box').css('display')!='flex'){
 			c.slideToggle(300);
-		}else if($('.message-box').css('display')=='flex'){
+		}
+		if($('.message-box').css('display')=='flex'){
 			$('.message-box').css('display','none');
-		}else if($('.tags-box').css('display')=='flex'){
+		}
+		if($('.tags-box').css('display')=='flex'){
 			$('.tags-box').css('display','none');
-		}else if($('.userChange-box').css('display')=='flex'){
+		}
+		if($('.userChange-box').css('display')=='flex'){
 			$('.userChange-box').css('display','none');
-		}else if($('.introduce-box').css('display')=='flex'){
+		}
+		if($('.introduce-box').css('display')=='flex'){
 			$('.introduce-box').css('display','none');
-		}else if($('.error-box').length>0){
+		}
+		if($('.error-box').length>0){
 			$('.error-box').fadeOut(300);
-		}else if($('.alert').length>0){
+		}
+		if($('.alert').length>0){
 			$('.alert').fadeOut(300);
-		}else if($('.posts-box').css('display')=='flex'){
+		}
+		if($('.posts-box').css('display')=='flex'){
 			$('.posts-box').css('display','none');
 		}
 	});
