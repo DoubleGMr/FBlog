@@ -87,15 +87,16 @@ $(document).on("turbolinks:load",function(){
 	});
 	$('.topControl').click(function(){
 		stop = true;
-		$('document,html,body').animate({scrollTop:0},300);
-		$('.right-other').animate({marginTop: 0},300,function(){stop = false;});
+		$('document,html,body,.right-other>div').animate({scrollTop:0,marginTop: 0},300,function(){
+			stop = false;
+		});
 	});
 });
 function scrollAnimate(){
-	var ro = $('.right-other');
+	var ro = $('.right-other>div');
 	var st = $(window).scrollTop();
 	if( ro.css('marginTop') ){
-		if($('.right-other>div').height() + st >= $('.left-list').height() ){
+		if(ro.height() + st >= $('.left-list').height() ){
 			return;
 		}
 	}
