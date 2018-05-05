@@ -24,7 +24,12 @@
 </div>
 
 <script>
-	if ($('#cke_post_content').length >=1) {
-		$('#cke_post_content').eq(1).remove();
+	var n = $('.cke_1').length;
+	if (n == 1) {
+		for(var i = 0; i < n; i++){
+			if($('.cke_1').siblings().length >= 1){
+				$('.cke_1').siblings().remove();
+			}
+		}
 	}
 </script>
