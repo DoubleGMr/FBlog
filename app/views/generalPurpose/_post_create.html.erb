@@ -24,12 +24,8 @@
 </div>
 
 <script>
-	var n = $('.cke_1').length;
-	if (n == 1) {
-		for(var i = 0; i < n; i++){
-			if($('.cke_1').siblings().length >= 1){
-				$('.cke_1').siblings().remove();
-			}
-		}
+	var n = $('.cke').length;
+	if (n > 0) {
+		$('.cke').eq(0).remove();
 	}
 </script>
