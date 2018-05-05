@@ -1,4 +1,4 @@
-if (typeof(CKEDITOR) != 'undefined' && $('#cke_post_content').length == 0) {
+if (typeof(CKEDITOR) != 'undefined') {
     CKEDITOR.editorConfig = function( config )
     {
       config.toolbar = 'MyToolbar'
